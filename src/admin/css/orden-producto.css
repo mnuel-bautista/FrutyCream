@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+.producto {
+    display: flex;
+    width: 318px;
+    height: 85px;
+    left: 0px;
+    top: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    align-items: flex-start;
+}
+
+.producto img {
+    width: 52px;
+    height: 52px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 50%;
+    align-self: center;
+    object-fit: cover;
+}
+
+.producto .info {
+    padding: 0px;
+    width: 200px;
+    align-self: center;
+}
+
+.producto .info p {
+    margin: 0px;
+    margin-bottom: 8px;
+}
+
+.info div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #362826;
+}
+
+.info div * {
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+.boton-remover {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-remover span {
+    font-size: 18px;
+}
+
+.boton-añadir {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-disminuir {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.añadir-mas {
+    width: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.añadir-mas {
+    flex-grow: 1;
+}
+
+.nombre-producto {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #362826;
+}
+
+.remover-producto {}

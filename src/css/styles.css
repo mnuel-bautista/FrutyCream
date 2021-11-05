@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.logo {
+    width: 120px;
+    height: 76px;
+    margin-left: 120px;
+    background-color: rgba(196, 196, 196, 1);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+li a {
+    position: relative;
+    text-decoration-style: none;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: rgba(65, 49, 46, 0.87);
+    transition: color .3s;
+}
+
+li a:hover:not(.active) {
+    color: rgba(252, 185, 178, 1);
+}
+
+nav button {
+    width: 135px;
+    height: 40px;
+    background-color: #FCB9B2;
+    color: #41312E;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-right: 120px;
+    transition: box-shadow .3s;
+}
+
+nav button:hover {
+    box-shadow: 0px 1px 2px rgba(65, 49, 46, 0.4);
+    cursor: pointer;
+}
+
+.active::before {
+    content: "";
+    background: rgba(252, 185, 178, 1);
+    position: absolute;
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+}
+
+.ver-mas {
+    width: 220px;
+    height: 40px;
+    background-color: #FCB9B2;
+    color: #41312E;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-left: 120px;
+    margin-top: 40px;
+    transition: box-shadow .3s;
+}
+
+.ver-mas:hover {
+    box-shadow: 0px 1px 2px rgba(65, 49, 46, 0.4);
+    cursor: pointer;
+}
+
+.info-titulo {
+    margin: 0px;
+    padding-top: 76px;
+    margin-left: 124px;
+    width: 524px;
+    font-size: 36.65px;
+    color: rgba(54, 40, 38, 1);
+}
+
+.info-descripcion {
+    margin-top: 32px;
+    margin-left: 124px;
+    margin-bottom: 0px;
+    width: 464px;
+    line-height: 150%;
+    font-size: 14px;
+    line-height: 2.3;
+    color: rgba(108, 80, 76, 0.87);
+}
+
+span {
+    color: rgba(253, 159, 150, 1);
+}
+
+.content {
+    position: relative;
+}
+
+img {
+    position: absolute;
+    width: 550px;
+    height: 485px;
+    left: 633px;
+    top: 0px;
+}
+
+.nuestros-productos {
+    width: 469px;
+    padding-top: 243px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nuestros-productos h2 {
+    font-size: 36.65;
+    color: rgba(54, 40, 38, 0.87);
+}
+
+.nuestros-productos p {
+    width: 469px;
+    font-size: 22.65;
+    color: rgba(54, 40, 38, 0.87);
+}
+
+.categorias {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.categoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 194px;
+    height: 316px;
+}
+
+.categoria .fondo-icono {
+    width: 76px;
+    height: 76px;
+    background-color: rgba(248, 232, 230, 1);
+}
+
+.categoria .titulo {
+    margin: 0px;
+    font-size: 22.65;
+    padding-top: 28px;
+    color: rgba(54, 40, 38, 1);
+}
+
+.categoria .descripcion {
+    font-size: 14px;
+    color: rgba(108, 80, 76, 0.87);
+    padding-top: 24px;
+    margin: 0px;
+}
+
+.footer {
+    width: 100%;
+    height: 296px;
+    background-color: rgba(248, 232, 230, 1);
+}

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+.menu {
+    width: 534px;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.menu li {
+    padding-left: 0px;
+    width: 124px;
+    height: 40px;
+    text-align: center;
+}
+
+.menu li:hover {
+    background-color: rgba(253, 159, 150, 0.12);
+    color: rgba(255, 84, 66, 1);
+    border-radius: 4px;
+}
+
+.seleccionado {
+    background-color: rgba(253, 159, 150, 0.12);
+    color: rgba(255, 84, 66, 1);
+    border-radius: 4px;
+}
+
+.menu a {
+    width: 124px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 300;
+    font-size: 14px;
+}
