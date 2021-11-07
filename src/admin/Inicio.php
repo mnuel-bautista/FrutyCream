@@ -1,6 +1,6 @@
 
 <?php
-
+ echo 'fasfd'
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
 
 $consulta = 'SELECT * FROM producto;'; 
