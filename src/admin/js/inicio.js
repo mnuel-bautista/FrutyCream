@@ -4,6 +4,8 @@ const elementoOrden = document.querySelector(".orden");
 
 const añadirFrappe = document.querySelector("button");
 
+const contenedorProductos = document.querySelector('.productos'); 
+
 //Los botones para eliminar que se encuentran en cada producto. Aparecen como una X en la parte superior 
 let eliminarBtns = document.querySelectorAll(".boton-remover");
 
@@ -30,7 +32,7 @@ const productos = [{
         id: "0754A",
         nombre: "Frappe",
         precio: 50,
-        cantidad: 2,
+        cantidad: 1,
         img: "https://images.unsplash.com/photo-1619761216693-a6d9e26a1ea0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=454&q=80"
     },
     {
@@ -52,43 +54,43 @@ const productos = [{
 let ps = []
 
 
+function confirmarOrden() {
+    
+}
+
 
 function añadirProducto(producto) {
 
-    //Quitar todos los productos dentro del elemento que contiene los productos de la orden
-    elementoOrden.innerHTML = "";
-
+    contenedorProductos.innerHTML = ''; 
     //Añadir el nuevo producto a la lista de productos. 
     ps.push(producto);
 
     //Mostrar en pantalla todos los productos dentro de la lista de productos 
     ps.forEach(e => mostrarProducto(e))
 
-    agregarEventoClick();
-    agregarEventoIncrementarCantidad();
-    agregarEventoDisminuirCantidad();
+    actualizarEventos(); 
 }
 
 function eliminarProducto(productoId) {
+
+    contenedorProductos.innerHTML = ''; 
+
     ps = ps.filter(e =>
         e.id !== productoId);
-
-    elementoOrden.innerHTML = "";
 
     ps.forEach(e => mostrarProducto(e));
 
     eliminarBtns = document.querySelectorAll(".boton-remover")
 
-    agregarEventoClick();
-    agregarEventoIncrementarCantidad();
-    agregarEventoDisminuirCantidad();
+    actualizarEventos(); 
 }
 
 function mostrarProducto(producto) {
+
     const { id, nombre, precio, cantidad, img } = producto
 
     const elementoProducto = `
-                <div class="producto" id="${id}">
+                <li class="producto" id="${id}">
                     <img src="${img}" alt="">
                     <div class="info">
                         <p class="nombre-producto">${nombre}</p>
@@ -102,13 +104,14 @@ function mostrarProducto(producto) {
                             <span>$ ${precio * cantidad}</span>
                         </div>
                     </div>
-                    <button class="mdc-icon-button material-icons-outlined boton-remover">close<div class="mdc-icon-button__ripple"></div></button>`;
+                    <button class="mdc-icon-button material-icons-outlined boton-remover">close<div class="mdc-icon-button__ripple"></div></button>
+                    </li>`;
 
     const template = document.createElement("template");
     template.innerHTML = elementoProducto;
 
 
-    elementoOrden.append(template.content);
+    contenedorProductos.appendChild(template.content);  
 }
 
 /**
@@ -116,7 +119,7 @@ function mostrarProducto(producto) {
  */
 function incrementarCantidadProducto(productoId) {
 
-    elementoOrden.innerHTML = "";
+    contenedorProductos.innerHTML = ''; 
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -125,8 +128,7 @@ function incrementarCantidadProducto(productoId) {
 
     ps.forEach(e => mostrarProducto(e))
 
-    agregarEventoIncrementarCantidad();
-    agregarEventoDisminuirCantidad();
+    actualizarEventos(); 
 }
 
 
@@ -134,7 +136,9 @@ function incrementarCantidadProducto(productoId) {
  * Disminuye la cantidad de determinado producto en la orden. 
  */
 function disminuirCantidadProducto(productoId) {
-    elementoOrden.innerHTML = "";
+
+    contenedorProductos.innerHTML = ''; 
+
     console.log(productoId)
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -145,8 +149,7 @@ function disminuirCantidadProducto(productoId) {
 
     ps.forEach(e => mostrarProducto(e))
 
-    agregarEventoDisminuirCantidad();
-    agregarEventoIncrementarCantidad();
+    actualizarEventos(); 
 }
 
 function agregarEventoClick() {
@@ -174,6 +177,7 @@ function agregarEventoIncrementarCantidad() {
             incrementarCantidadProducto(e.target.parentElement.parentElement.parentElement.parentElement.id)
         })
     })
+
 }
 
 //Agrega los eventos de los botones para aumentar la cantidad de determinado producto 
@@ -189,4 +193,10 @@ function agregarEventoDisminuirCantidad() {
             disminuirCantidadProducto(e.target.parentElement.parentElement.parentElement.parentElement.id)
         })
     })
+}
+
+function actualizarEventos() {
+    agregarEventoDisminuirCantidad(); 
+    agregarEventoIncrementarCantidad(); 
+    agregarEventoClick(); 
 }

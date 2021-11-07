@@ -1,3 +1,4 @@
+@import url('boton.css');
 body {
     margin: 0px;
     padding: 0px;
@@ -15,7 +16,27 @@ body {
     background-color: red;
 }
 
+.orden {
+    display: flex;
+    flex-direction: column;
+}
+
+.productos {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+ul {
+    padding: 0; 
+}
+
 .content {
     flex-grow: 1;
     background-color: aqua;
+}
+
+.confirmar-orden {
+    width: 100%;
+    margin: 12px; 
+
 }
