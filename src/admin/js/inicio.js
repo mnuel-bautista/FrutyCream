@@ -90,7 +90,7 @@ function mostrarProducto(producto) {
     const { id, nombre, precio, cantidad, img } = producto
 
     const elementoProducto = `
-                <li class="producto" id="${id}">
+            <li class="articulo" id="${id}">
                     <img src="${img}" alt="">
                     <div class="info">
                         <p class="nombre-producto">${nombre}</p>
@@ -105,7 +105,7 @@ function mostrarProducto(producto) {
                         </div>
                     </div>
                     <button class="mdc-icon-button material-icons-outlined boton-remover">close<div class="mdc-icon-button__ripple"></div></button>
-                    </li>`;
+            </li>`;
 
     const template = document.createElement("template");
     template.innerHTML = elementoProducto;

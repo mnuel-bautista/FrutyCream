@@ -1,6 +1,5 @@
 
 <?php
- echo 'fasfd'
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
 
 $consulta = 'SELECT * FROM producto;'; 
@@ -38,7 +37,7 @@ $productos = mysqli_query($conn, $consulta);
                 <h2>Productos</h2>
                 <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
                     <li>
-                        <img src="<?= $producto[4]?>" alt="">
+                       
                         <div>
                             <p><?= $producto[1] ?></p>
                             <p><?= $producto[3] ?></p>
@@ -56,7 +55,7 @@ $productos = mysqli_query($conn, $consulta);
     </div>
 
     <template>
-        <li class="producto">
+        <li class="articulo">
             <img src="https://images.unsplash.com/photo-1619761216693-a6d9e26a1ea0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=454&q=80" alt="">
             <div class="info">
                 <p class="nombre-producto">Frappe</p>
