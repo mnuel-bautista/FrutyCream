@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
-.producto {
+
+.articulo {
     display: flex;
     width: 318px;
     height: 85px;
@@ -9,7 +10,7 @@
     align-items: flex-start;
 }
 
-.producto img {
+.articulo img {
     width: 52px;
     height: 52px;
     margin-left: 16px;
@@ -19,13 +20,13 @@
     object-fit: cover;
 }
 
-.producto .info {
+.articulo .info {
     padding: 0px;
     width: 200px;
     align-self: center;
 }
 
-.producto .info p {
+.articulo .info p {
     margin: 0px;
     margin-bottom: 8px;
 }
@@ -96,5 +97,3 @@
     line-height: 16px;
     color: #362826;
 }
-
-.remover-producto {}
