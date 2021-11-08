@@ -81,7 +81,7 @@ body {
       padding: 0;
       width: 400%;
 
-      animation: slide 24s infinite alternate ease-in-out;
+      animation: slide 16s infinite alternate ease-in-out;
   }
 
   .slider-frame li{
@@ -94,6 +94,7 @@ body {
   }
 
   .slider-frame h1{
+      padding-top: 20px;
       text-align: center;
       color: #ea899a;
   }
