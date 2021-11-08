@@ -4,7 +4,7 @@ const elementoOrden = document.querySelector(".orden");
 
 const añadirFrappe = document.querySelector("button");
 
-const contenedorProductos = document.querySelector('.articulos'); 
+const itemsContainer = document.querySelector('.articulos'); 
 
 //Los botones para eliminar que se encuentran en cada producto. Aparecen como una X en la parte superior 
 let eliminarBtns = document.querySelectorAll(".boton-remover");
@@ -61,7 +61,7 @@ function confirmarOrden() {
 
 function añadirProducto(producto) {
 
-    contenedorProductos.innerHTML = ''; 
+    itemsContainer.innerHTML = ''; 
     //Añadir el nuevo producto a la lista de productos. 
     ps.push(producto);
 
@@ -73,7 +73,7 @@ function añadirProducto(producto) {
 
 function eliminarProducto(productoId) {
 
-    contenedorProductos.innerHTML = ''; 
+    itemsContainer.innerHTML = ''; 
 
     ps = ps.filter(e =>
         e.id !== productoId);
@@ -111,7 +111,7 @@ function mostrarProducto(producto) {
     template.innerHTML = elementoProducto;
 
 
-    contenedorProductos.appendChild(template.content);  
+    itemsContainer.appendChild(template.content);  
 }
 
 /**
@@ -119,7 +119,7 @@ function mostrarProducto(producto) {
  */
 function incrementarCantidadProducto(productoId) {
 
-    contenedorProductos.innerHTML = ''; 
+    itemsContainer.innerHTML = ''; 
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -137,7 +137,7 @@ function incrementarCantidadProducto(productoId) {
  */
 function disminuirCantidadProducto(productoId) {
 
-    contenedorProductos.innerHTML = ''; 
+    itemsContainer.innerHTML = ''; 
 
     console.log(productoId)
     const producto = ps.find(e => e.id === productoId)
