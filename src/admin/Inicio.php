@@ -33,7 +33,7 @@ $productos = mysqli_query($conn, $consulta);
         <div class="content">
             <button>Añadir frappe</button>
             <button>Añadir Helado</button> 
-            <ul>
+            <ul class="productos">
                 <h2>Productos</h2>
                 <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
                     <li class="producto">
