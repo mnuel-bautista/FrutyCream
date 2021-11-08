@@ -1,4 +1,6 @@
 @import url('boton.css');
+@import url('producto.css'); 
+
 body {
     margin: 0px;
     padding: 0px;

@@ -18,9 +18,9 @@ $productos = mysqli_query($conn, $consulta);
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/orden-producto.css">
+    <link rel="stylesheet" href="css/orden-articulo.css">
     <link rel="stylesheet" href="css/inicio.css">
-    <script src="js/inicio.js" defer></script>
+    <script src="js/inicio.js" defer></script> 
     <!-- Para agregar algunos iconos -->
 </head>
 <body>
@@ -36,11 +36,14 @@ $productos = mysqli_query($conn, $consulta);
             <ul>
                 <h2>Productos</h2>
                 <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
-                    <li>
-                       
+                    <li class="producto">
+                        <button class="mdc-icon-button material-icons-outlined añadir-orden"><span class="material-icons-outlined">
+add_circle_outline
+</span><div class="mdc-icon-button__ripple"></div></button>
+                        <img src="img/helado_fresa.png" alt="">
                         <div>
-                            <p><?= $producto[1] ?></p>
-                            <p><?= $producto[3] ?></p>
+                            <p class="s1"><?= $producto[1] ?></p>
+                            <p class="s1"><?= $producto[3] ?></p>
                         </div>
                     </li>
                 <?php endforeach; ?>
