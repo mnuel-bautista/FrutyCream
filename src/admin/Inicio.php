@@ -37,9 +37,7 @@ $productos = mysqli_query($conn, $consulta);
                 <h2>Productos</h2>
                 <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
                     <li class="producto">
-                        <button class="mdc-icon-button material-icons-outlined añadir-orden"><span class="material-icons-outlined">
-add_circle_outline
-</span><div class="mdc-icon-button__ripple"></div></button>
+                        <button class="mdc-icon-button material-icons-outlined añadir-orden"><span class="material-icons-outlined">add_circle_outline</span><div class="mdc-icon-button__ripple"></div></button>
                         <img src="img/helado_fresa.png" alt="">
                         <div>
                             <p class="s1"><?= $producto[1] ?></p>
@@ -52,7 +50,7 @@ add_circle_outline
 
 
         <div class="orden">
-            <ul class="productos"></ul>
+            <ul class="articulos"></ul>
             <button class="boton confirmar-orden">Confirmar</button>
         </div>
     </div>

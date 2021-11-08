@@ -23,7 +23,7 @@ body {
     flex-direction: column;
 }
 
-.productos {
+.articulos {
     flex-grow: 1;
     overflow-y: scroll;
 }

@@ -4,7 +4,7 @@ const elementoOrden = document.querySelector(".orden");
 
 const añadirFrappe = document.querySelector("button");
 
-const contenedorProductos = document.querySelector('.productos'); 
+const contenedorProductos = document.querySelector('.articulos'); 
 
 //Los botones para eliminar que se encuentran en cada producto. Aparecen como una X en la parte superior 
 let eliminarBtns = document.querySelectorAll(".boton-remover");
