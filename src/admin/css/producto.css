@@ -19,7 +19,7 @@
     text-align: center;
 }
 
-.añadir-orden {
+.añadir-articulo {
     visibility: hidden;
     width: 18px;
     height: 18px;
@@ -32,7 +32,7 @@
     color: rgba(253, 159, 150, 1); 
 }
 
-.producto:hover .añadir-orden {
+.producto:hover .añadir-articulo {
     visibility: visible;
 }
 
