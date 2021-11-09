@@ -1,5 +1,7 @@
 @import url('boton.css');
 @import url('producto.css'); 
+@import url('../../css/tipografia.css');
+@import url('category-menu.css');
 
 body {
     margin: 0px;
@@ -36,6 +38,7 @@ ul {
 .content {
     flex-grow: 1;
     background-color: #FFFBFA;
+    padding: 24px; 
 }
 
 .confirmar-orden {

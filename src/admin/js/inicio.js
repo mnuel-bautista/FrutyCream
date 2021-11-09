@@ -15,7 +15,15 @@ let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
 let addItemButtons = document.querySelectorAll(".añadir-articulo"); 
 
-console.log(añadirBtns)
+let categoryElements = document.querySelectorAll(".category"); 
+
+categoryElements.forEach(element => {
+    element.addEventListener('click', e => {
+        changeCategory(e.target.id); 
+    })
+})
+
+const categories = []; 
 
 actualizarEventos(); 
 setAddItemButtonsClickListener(); 
@@ -28,6 +36,7 @@ añadirFrappe.addEventListener('click', e => {
     const p = JSON.parse(JSON.stringify(productos[0]));
     añadirProducto(p);
 })
+
 
 /**
  * 

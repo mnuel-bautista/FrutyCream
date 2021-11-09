@@ -5,6 +5,10 @@ $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 $consulta = 'SELECT * FROM producto;'; 
 $productos = mysqli_query($conn, $consulta);
 
+$categories_query = 'SELECT * FROM categoria;'; 
+$result = mysqli_query($conn, $categories_query); 
+
+$categories = mysqli_fetch_all($result); 
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +35,13 @@ $productos = mysqli_query($conn, $consulta);
         </div>
 
         <div class="content">
-            <button>Añadir frappe</button>
-            <button>Añadir Helado</button> 
+            <ul class="categories s2">
+                <li class="category selected">All</li>
+                <?php foreach($categories as $category): ?>
+                    <li class="category" id="<?=$category[0]?>"><?=$category[1]?></li>
+                <?php endforeach; ?>
+                <span class="divider"></span>
+            </ul>
             <ul class="productos">
                 <h2>Productos</h2>
                 <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
