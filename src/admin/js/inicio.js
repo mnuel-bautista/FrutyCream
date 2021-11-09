@@ -13,11 +13,13 @@ let añadirBtns = document.querySelectorAll(".boton-añadir");
 
 let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
+let addItemButtons = document.querySelectorAll(".añadir-articulo"); 
+
 console.log(añadirBtns)
 
-agregarEventoClick();
-agregarEventoIncrementarCantidad();
-agregarEventoDisminuirCantidad();
+actualizarEventos(); 
+setAddItemButtonsClickListener(); 
+
 
 let i = 0;
 
@@ -27,6 +29,45 @@ añadirFrappe.addEventListener('click', e => {
     añadirProducto(p);
 })
 
+/**
+ * 
+ * Adds the item to the current order. 
+ */
+function addItem(productId) {
+    const productElement = document.getElementById(`${productId}`); 
+
+    itemsContainer.innerHTML = '';
+
+    //If the item is not found, add this product as a new item..
+    const index = ps.findIndex(e => e.id === productId)  
+    if(index === -1) {
+        const id = productElement.id; 
+        //The image url of the product. 
+        const img = productElement.children[1].src;
+        const name = productElement.children[2].firstElementChild.textContent; 
+        const price = productElement.children[2].lastElementChild.textContent;  
+    
+        const product = {
+            id: id, 
+            nombre: name,
+            precio: price, 
+            cantidad: 1, 
+            img: img,   
+        }
+    
+        ps.push(product); 
+    } else {
+        //If product is found in the order items, only increase the quantity. 
+        console.log(ps[index]['cantidad']);
+        ps[index]['cantidad'] = ps[index]['cantidad'] + 1; 
+    }
+
+    
+
+    ps.forEach(e => mostrarProducto(e)); 
+
+    actualizarEventos(); 
+}
 
 const productos = [{
         id: "0754A",
@@ -195,8 +236,22 @@ function agregarEventoDisminuirCantidad() {
     })
 }
 
+function setAddItemButtonsClickListener() {
+
+    addItemButtons = document.querySelectorAll('.añadir-articulo'); 
+
+    addItemButtons.forEach(button => {
+        button.addEventListener('click', e => {
+            console.log("fasdfad"); 
+            addItem(e.target.parentElement.parentElement.id); 
+        })
+    })
+}
+
 function actualizarEventos() {
     agregarEventoDisminuirCantidad(); 
     agregarEventoIncrementarCantidad(); 
     agregarEventoClick(); 
+
+    //setAddItemButtonsClickListener(); 
 }

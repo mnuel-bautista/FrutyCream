@@ -28,13 +28,14 @@ body {
     overflow-y: scroll;
 }
 
+
 ul {
     padding: 0; 
 }
 
 .content {
     flex-grow: 1;
-    background-color: aqua;
+    background-color: #FFFBFA;
 }
 
 .confirmar-orden {
