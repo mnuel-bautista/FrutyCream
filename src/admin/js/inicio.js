@@ -25,10 +25,8 @@ categoryElements.forEach(element => {
 
 const categories = []; 
 
-actualizarEventos(); 
-setAddItemButtonsClickListener(); 
-
 getAllProducts(); 
+actualizarEventos();  
 
 
 let i = 0;
@@ -45,7 +43,11 @@ function getAllProducts() {
 
     fetch('http://localhost/proyecto-pw/src/admin/products.php')
         .then(response => response.text())
-        .then(products => productsContainer.innerHTML = products); 
+        .then(products => {
+            productsContainer.innerHTML = products
+            setAddItemButtonsClickListener();
+        }); 
+
 }
 
 
@@ -54,7 +56,9 @@ function getAllProducts() {
  * Adds the item to the current order. 
  */
 function addItem(productId) {
-    const productElement = document.getElementById(`${productId}`); 
+    console.log(productId); 
+    const products = document.getElementsByClassName("producto")
+    const productElement = products.namedItem(productId); 
 
     itemsContainer.innerHTML = '';
 

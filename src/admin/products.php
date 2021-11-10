@@ -19,5 +19,5 @@ $categories = mysqli_fetch_all($result);
                 <p class="s1"><?= $producto[1] ?></p>
                 <p class="s1"><?= $producto[3] ?></p>
             </div>
-        </li>
+    </li>
 <?php endforeach; ?>
