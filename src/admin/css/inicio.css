@@ -6,50 +6,59 @@
 body {
     margin: 0px;
     padding: 0px;
+    height: 100vh;
 }
 
 .container {
     display: flex;
-    width: 100%;
-    height: 500px;
+    height: 100%;
+    align-items: stretch;
 }
 
 .header {
     width: 250px;
-    height: 100%;
     background-color: red;
 }
 
 .orden {
+    box-sizing:content-box;
     display: flex;
     flex-direction: column;
+    width: 318px;
 }
 
 .articulos {
     flex-grow: 1;
-    overflow-y: scroll;
+    flex-basis: 0;
+    align-items: flex-end;
+    width: 318px;
+    margin: 0px; 
 }
+
 
 .products {
     display: grid;
     overflow-y: scroll;
-    max-height: 100vh;
+    flex-grow: 1; 
     grid-template-columns: 50% 50%;
 }
-
 
 ul {
     padding: 0; 
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     background-color: #FFFBFA;
-    padding: 24px; 
+    padding-left: 24px;
+    padding-right: 24px; 
 }
 
 .confirmar-orden {
     width: 100%;
-    margin: 12px; 
-
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 0px; 
 }
