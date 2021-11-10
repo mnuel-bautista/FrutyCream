@@ -28,6 +28,8 @@ const categories = [];
 actualizarEventos(); 
 setAddItemButtonsClickListener(); 
 
+getAllProducts(); 
+
 
 let i = 0;
 
@@ -36,6 +38,15 @@ añadirFrappe.addEventListener('click', e => {
     const p = JSON.parse(JSON.stringify(productos[0]));
     añadirProducto(p);
 })
+
+function getAllProducts() {
+
+    const productsContainer = document.querySelector('.products'); 
+
+    fetch('http://localhost/proyecto-pw/src/admin/products.php')
+        .then(response => response.text())
+        .then(products => productsContainer.innerHTML = products); 
+}
 
 
 /**
