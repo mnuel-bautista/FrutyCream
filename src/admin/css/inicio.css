@@ -30,6 +30,13 @@ body {
     overflow-y: scroll;
 }
 
+.products {
+    display: grid;
+    overflow-y: scroll;
+    max-height: 100vh;
+    grid-template-columns: 50% 50%;
+}
+
 
 ul {
     padding: 0; 
