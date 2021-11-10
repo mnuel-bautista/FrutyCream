@@ -25,6 +25,7 @@ $categories = mysqli_fetch_all($result);
     <link rel="stylesheet" href="css/orden-articulo.css">
     <link rel="stylesheet" href="css/inicio.css">
     <script src="js/inicio.js" defer></script> 
+    <script src="js/categories.js" defer></script>
     <!-- Para agregar algunos iconos -->
 </head>
 <body>
@@ -37,14 +38,12 @@ $categories = mysqli_fetch_all($result);
         <div class="content">
             <ul class="categories s2">
                 <li class="category selected">All</li>
-                <?php foreach($categories as $category): ?>
-                    <li class="category" id="<?=$category[0]?>"><?=$category[1]?></li>
-                <?php endforeach; ?>
+                    <?php foreach($categories as $category): ?>
+                        <li class="category" id="<?=$category[0]?>"><?=$category[1]?></li>
+                    <?php endforeach; ?>
                 <span class="divider"></span>
             </ul>
-            <ul class="products">
-                <h2>Productos</h2>
-            </ul>
+            <ul class="products"></ul>
         </div>
 
 

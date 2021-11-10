@@ -15,14 +15,6 @@ let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
 let addItemButtons = document.querySelectorAll(".añadir-articulo"); 
 
-let categoryElements = document.querySelectorAll(".category"); 
-
-categoryElements.forEach(element => {
-    element.addEventListener('click', e => {
-        changeCategory(e.target.id); 
-    })
-})
-
 const categories = []; 
 
 getAllProducts(); 
