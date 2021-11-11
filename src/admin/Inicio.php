@@ -26,6 +26,7 @@ $categories = mysqli_fetch_all($result);
     <link rel="stylesheet" href="css/inicio.css">
     <script src="js/inicio.js" defer></script> 
     <script src="js/categories.js" defer></script>
+    <script src="js/order.js" defer></script>
     <!-- Para agregar algunos iconos -->
 </head>
 <body>
@@ -48,6 +49,10 @@ $categories = mysqli_fetch_all($result);
 
 
         <div class="orden">
+            <div class="order-title">
+                <h5>Order</h5>
+                <button class="mdc-icon-button material-icons-outlined delete-order">close<div class="mdc-icon-button__ripple"></div></button>
+            </div>
             <ul class="articulos"></ul>
             <button class="boton confirmar-orden">Confirmar</button>
         </div>

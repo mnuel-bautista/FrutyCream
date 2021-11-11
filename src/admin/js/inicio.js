@@ -1,8 +1,9 @@
+
 const orden = {};
 
-const elementoOrden = document.querySelector(".orden");
+let ps = []; 
 
-const añadirFrappe = document.querySelector("button");
+const elementoOrden = document.querySelector(".orden");
 
 const itemsContainer = document.querySelector('.articulos'); 
 
@@ -15,6 +16,8 @@ let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
 let addItemButtons = document.querySelectorAll(".añadir-articulo"); 
 
+
+
 const categories = []; 
 
 getAllProducts(); 
@@ -22,12 +25,6 @@ actualizarEventos();
 
 
 let i = 0;
-
-añadirFrappe.addEventListener('click', e => {
-    productos[0]['id'] = "" + Math.floor((Math.random() * 100));
-    const p = JSON.parse(JSON.stringify(productos[0]));
-    añadirProducto(p);
-})
 
 function getAllProducts() {
 
@@ -84,31 +81,6 @@ function addItem(productId) {
 
     actualizarEventos(); 
 }
-
-const productos = [{
-        id: "0754A",
-        nombre: "Frappe",
-        precio: 50,
-        cantidad: 1,
-        img: "https://images.unsplash.com/photo-1619761216693-a6d9e26a1ea0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=454&q=80"
-    },
-    {
-        id: "0184A",
-        nombre: "Frappe",
-        precio: 50,
-        cantidad: 2,
-        img: "https://images.unsplash.com/photo-1619761216693-a6d9e26a1ea0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=454&q=80"
-    },
-    {
-        id: "0127A",
-        nombre: "Frappe",
-        precio: 50,
-        cantidad: 2,
-        img: "https://images.unsplash.com/photo-1619761216693-a6d9e26a1ea0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=454&q=80"
-    }
-]
-
-let ps = []
 
 
 function confirmarOrden() {
