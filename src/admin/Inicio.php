@@ -5,6 +5,10 @@ $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 $consulta = 'SELECT * FROM producto;'; 
 $productos = mysqli_query($conn, $consulta);
 
+$categories_query = 'SELECT * FROM categoria;'; 
+$result = mysqli_query($conn, $categories_query); 
+
+$categories = mysqli_fetch_all($result); 
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +22,11 @@ $productos = mysqli_query($conn, $consulta);
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/orden-producto.css">
+    <link rel="stylesheet" href="css/orden-articulo.css">
     <link rel="stylesheet" href="css/inicio.css">
-    <script src="js/inicio.js" defer></script>
+    <script src="js/inicio.js" defer></script> 
+    <script src="js/categories.js" defer></script>
+    <script src="js/order.js" defer></script>
     <!-- Para agregar algunos iconos -->
 </head>
 <body>
@@ -31,26 +37,24 @@ $productos = mysqli_query($conn, $consulta);
         </div>
 
         <div class="content">
-            <button>Añadir frappe</button>
-            <button>Añadir Helado</button> 
-            <ul>
-                <h2>Productos</h2>
-                <?php foreach(mysqli_fetch_all($productos) as $producto): ?>
-                    <li>
-                       
-                        <div>
-                            <p><?= $producto[1] ?></p>
-                            <p><?= $producto[3] ?></p>
-                        </div>
-                    </li>
-                <?php endforeach; ?>
+            <ul class="categories s2">
+                <li class="category selected">All</li>
+                    <?php foreach($categories as $category): ?>
+                        <li class="category" id="<?=$category[0]?>"><?=$category[1]?></li>
+                    <?php endforeach; ?>
+                <span class="divider"></span>
             </ul>
+            <ul class="products"></ul>
         </div>
 
 
         <div class="orden">
-            <ul class="productos"></ul>
-            <button class="boton confirmar-orden">Confirmar</button>
+            <div class="order-title">
+                <h5>Order</h5>
+                <button class="mdc-icon-button material-icons-outlined delete-order">close<div class="mdc-icon-button__ripple"></div></button>
+            </div>
+            <ul class="articulos"></ul>
+            <button class="boton confirm-order">Confirmar</button>
         </div>
     </div>
 

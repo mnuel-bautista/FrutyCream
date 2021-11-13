@@ -1,0 +1,38 @@
+.producto {
+    position: relative;
+    width: 186px;
+    height: 220px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border-radius: 4px;
+
+}
+
+.producto img {
+    margin: auto;
+}
+
+.producto div p {
+    text-align: center;
+}
+
+.añadir-articulo {
+    visibility: hidden;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    right: 8px; 
+    top: 8px; 
+    color: rgba(253, 159, 150, 1); 
+}
+
+.producto:hover .añadir-articulo {
+    visibility: visible;
+}
+
