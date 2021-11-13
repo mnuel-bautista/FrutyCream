@@ -45,7 +45,6 @@ function getAllProducts() {
  * Adds the item to the current order. 
  */
 function addItem(productId) {
-    console.log(productId); 
     const products = document.getElementsByClassName("producto")
     const productElement = products.namedItem(productId); 
 
@@ -71,7 +70,6 @@ function addItem(productId) {
         ps.push(product); 
     } else {
         //If product is found in the order items, only increase the quantity. 
-        console.log(ps[index]['cantidad']);
         ps[index]['cantidad'] = ps[index]['cantidad'] + 1; 
     }
 
@@ -80,11 +78,6 @@ function addItem(productId) {
     ps.forEach(e => mostrarProducto(e)); 
 
     actualizarEventos(); 
-}
-
-
-function confirmarOrden() {
-    
 }
 
 
@@ -168,7 +161,6 @@ function disminuirCantidadProducto(productoId) {
 
     itemsContainer.innerHTML = ''; 
 
-    console.log(productoId)
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
 
@@ -185,7 +177,6 @@ function agregarEventoClick() {
     eliminarBtns = document.querySelectorAll(".boton-remover")
     eliminarBtns.forEach(e => {
         e.addEventListener('click', e => {
-            console.log(e.target.parentElement.id)
                 //Después de identificar que boton fue presionado, acceder al padre del elemento
                 //para obtener el id y poder eliminar el elemento. 
             eliminarProducto(e.target.parentElement.id)
@@ -200,7 +191,6 @@ function agregarEventoIncrementarCantidad() {
 
     añadirBtns.forEach(e => {
         e.addEventListener('click', e => {
-            console.log('click');
             //Después de identificar que boton fue presionado, acceder al padre del elemento
             //para obtener el id y poder eliminar el elemento. 
             incrementarCantidadProducto(e.target.parentElement.parentElement.parentElement.parentElement.id)
@@ -212,11 +202,9 @@ function agregarEventoIncrementarCantidad() {
 //Agrega los eventos de los botones para aumentar la cantidad de determinado producto 
 function agregarEventoDisminuirCantidad() {
     disminuirBtns = document.querySelectorAll(".boton-disminuir");
-    console.log(disminuirBtns);
 
     disminuirBtns.forEach(e => {
         e.addEventListener('click', e => {
-            console.log('dism');
             //Después de identificar que boton fue presionado, acceder al padre del elemento
             //para obtener el id y poder eliminar el elemento. 
             disminuirCantidadProducto(e.target.parentElement.parentElement.parentElement.parentElement.id)
@@ -230,7 +218,6 @@ function setAddItemButtonsClickListener() {
 
     addItemButtons.forEach(button => {
         button.addEventListener('click', e => {
-            console.log("fasdfad"); 
             addItem(e.target.parentElement.parentElement.id); 
         })
     })

@@ -54,7 +54,7 @@ $categories = mysqli_fetch_all($result);
                 <button class="mdc-icon-button material-icons-outlined delete-order">close<div class="mdc-icon-button__ripple"></div></button>
             </div>
             <ul class="articulos"></ul>
-            <button class="boton confirmar-orden">Confirmar</button>
+            <button class="boton confirm-order">Confirmar</button>
         </div>
     </div>
 
