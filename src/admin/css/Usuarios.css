@@ -1,0 +1,34 @@
+/* Productos */
+
+.container{
+    position: absolute;
+    width: 1091px;
+    height: 778px;
+    left: 258px;
+    top: 0px;
+    background: #FFFBFA;
+    border-radius: 4px;
+}
+
+/*Vector 1*/
+.hr{
+position: absolute;
+width: 730px;
+height: 0px;
+left: 276px;
+top: 83px;
+
+border: 1px solid rgba(54, 40, 38, 0.2);
+}
+
+.input{
+position: absolute;
+width: 256px;
+height: 30px;
+left: 750px;
+top: 29px;
+
+border: 1px solid rgba(54, 40, 38, 0.32);
+box-sizing: border-box;
+border-radius: 4px;
+}
