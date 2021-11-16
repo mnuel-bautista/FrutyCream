@@ -30,12 +30,12 @@
     font-weight: 300;
 }
 
-.nav-selected-item { 
+.elemento-seleccionado { 
     color: rgba(255, 84, 66, 1); 
     background-color: rgba(253, 159, 150, 0.12);
 }
 
-.nav-bar li a:not(.nav-selected-item) {
+.nav-bar li a:not(.elemento-seleccionado) {
     color: rgba(54, 40, 38, 1); 
 }
 

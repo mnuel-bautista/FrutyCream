@@ -1,6 +1,6 @@
 <div class="header">
             <nav class="nav-bar">
-                <li><a href="#" class="mdc-icon-button material-icons-outlined nav-selected-item">
+                <li><a href="#" class="mdc-icon-button material-icons-outlined elemento-seleccionado">
                     <span>home</span>
                     <p class="s1">Inicio</p>
                 </a></li>

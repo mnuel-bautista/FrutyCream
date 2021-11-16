@@ -5,7 +5,7 @@ let ps = [];
 
 const elementoOrden = document.querySelector(".orden");
 
-const itemsContainer = document.querySelector('.articulos'); 
+const contenedorDeArticulos = document.querySelector('.articulos'); 
 
 //Los botones para eliminar que se encuentran en cada producto. Aparecen como una X en la parte superior 
 let eliminarBtns = document.querySelectorAll(".boton-remover");
@@ -14,7 +14,7 @@ let añadirBtns = document.querySelectorAll(".boton-añadir");
 
 let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
-let addItemButtons = document.querySelectorAll(".añadir-articulo"); 
+let añadirArticulosBtns = document.querySelectorAll(".añadir-articulo"); 
 
 
 
@@ -28,9 +28,9 @@ let i = 0;
 
 function getAllProducts() {
 
-    const productsContainer = document.querySelector('.products'); 
+    const productsContainer = document.querySelector('.productos'); 
 
-    fetch('http://localhost/proyecto-pw/src/admin/products.php')
+    fetch('http://localhost/proyecto-pw/src/admin/productos.php')
         .then(response => response.text())
         .then(products => {
             productsContainer.innerHTML = products
@@ -42,22 +42,22 @@ function getAllProducts() {
 
 /**
  * 
- * Adds the item to the current order. 
+ * Añadir el articulo a la orden 
  */
-function addItem(productId) {
+function añadirArticulo(idProducto) {
     const products = document.getElementsByClassName("producto")
-    const productElement = products.namedItem(productId); 
+    const elementoDeProducto = products.namedItem(idProducto); 
 
-    itemsContainer.innerHTML = '';
+    contenedorDeArticulos.innerHTML = '';
 
-    //If the item is not found, add this product as a new item..
-    const index = ps.findIndex(e => e.id === productId)  
+    //Si el articulo no se encuentra, añadirlo a la orden como un nuevo articulo
+    const index = ps.findIndex(e => e.id === idProducto)  
     if(index === -1) {
-        const id = productElement.id; 
-        //The image url of the product. 
-        const img = productElement.children[1].src;
-        const name = productElement.children[2].firstElementChild.textContent; 
-        const price = productElement.children[2].lastElementChild.textContent;  
+        const id = elementoDeProducto.id; 
+        //La url de la imagen del producto
+        const img = elementoDeProducto.children[1].src;
+        const name = elementoDeProducto.children[2].firstElementChild.textContent; 
+        const price = elementoDeProducto.children[2].lastElementChild.textContent;  
     
         const product = {
             id: id, 
@@ -69,7 +69,7 @@ function addItem(productId) {
     
         ps.push(product); 
     } else {
-        //If product is found in the order items, only increase the quantity. 
+        //Si el producto ya se encuentra en la orden, solo aumenta la cantidad 
         ps[index]['cantidad'] = ps[index]['cantidad'] + 1; 
     }
 
@@ -83,7 +83,7 @@ function addItem(productId) {
 
 function añadirProducto(producto) {
 
-    itemsContainer.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = ''; 
     //Añadir el nuevo producto a la lista de productos. 
     ps.push(producto);
 
@@ -95,7 +95,7 @@ function añadirProducto(producto) {
 
 function eliminarProducto(productoId) {
 
-    itemsContainer.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = ''; 
 
     ps = ps.filter(e =>
         e.id !== productoId);
@@ -133,7 +133,7 @@ function mostrarProducto(producto) {
     template.innerHTML = elementoProducto;
 
 
-    itemsContainer.appendChild(template.content);  
+    contenedorDeArticulos.appendChild(template.content);  
 }
 
 /**
@@ -141,7 +141,7 @@ function mostrarProducto(producto) {
  */
 function incrementarCantidadProducto(productoId) {
 
-    itemsContainer.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = ''; 
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -159,7 +159,7 @@ function incrementarCantidadProducto(productoId) {
  */
 function disminuirCantidadProducto(productoId) {
 
-    itemsContainer.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = ''; 
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -214,11 +214,11 @@ function agregarEventoDisminuirCantidad() {
 
 function setAddItemButtonsClickListener() {
 
-    addItemButtons = document.querySelectorAll('.añadir-articulo'); 
+    añadirArticulosBtns = document.querySelectorAll('.añadir-articulo'); 
 
-    addItemButtons.forEach(button => {
+    añadirArticulosBtns.forEach(button => {
         button.addEventListener('click', e => {
-            addItem(e.target.parentElement.parentElement.id); 
+            añadirArticulo(e.target.parentElement.parentElement.id); 
         })
     })
 }
