@@ -68,26 +68,26 @@ $categorias = mysqli_fetch_all($resultado);
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
+                            <form id="producto-formulario" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
                                 <div class="mb-3">
                                     <label for="nombre-producto">Nombre</label>
-                                    <input type="text" id="nombre-producto">
+                                    <input type="text" name="nombre" id="nombre-producto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="descripcion-producto">Descripcion</label>
-                                    <input type="text" id="descripcion-producto">
+                                    <input type="text" name="descripcion" id="descripcion-producto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="precio-producto">Precio</label>
-                                    <input type="number" id="precio-producto">
+                                    <input type="number" name="precio" id="precio-producto">
                                 </div>
                                 <div class="mb-3">
                                     <label for="imagen-producto">Imagen</label>
-                                    <input type="file" id="imagen-producto" accept="image/*">
+                                    <input type="file" name="img" id="imagen-producto" accept="image/*">
                                 </div>
                                 <div class="mb-3">
                                     <label for="categoria-producto">Categoria</label>
-                                    <select name="categoria" id="categoria-producto">
+                                    <select name="categoria" name="categoria"   id="categoria-producto">
                                         <?php foreach($categorias as $categoria): ?>
                                             <option value="<?=$categoria[0];?>"><?=$categoria[1]?></option>
                                         <?php endforeach; ?>
@@ -97,7 +97,7 @@ $categorias = mysqli_fetch_all($resultado);
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                            <button type="submit" form="producto-formulario" class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
                 </div>
