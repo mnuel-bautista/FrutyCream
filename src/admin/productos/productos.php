@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
+//Recuperar todas las categorias de productos.
+$consulta = "SELECT id_cat, categoria FROM categoria;"; 
+//Realiza la consulta a la base de datos
+$resultado = mysqli_query($conn, $consulta); 
+
+//Convertir el resultado devuelto por mysql a un arreglo de categorias
+$categorias = mysqli_fetch_all($resultado); 
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,6 +88,9 @@
                                 <div class="mb-3">
                                     <label for="categoria-producto">Categoria</label>
                                     <select name="categoria" id="categoria-producto">
+                                        <?php foreach($categorias as $categoria): ?>
+                                            <option value="<?=$categoria[0];?>"><?=$categoria[1]?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </form>
