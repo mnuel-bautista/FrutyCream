@@ -1,10 +1,10 @@
-.categories {
+.categorias {
     position: relative;
     display: flex;
     list-style-type: none;
 }
 
-.category {
+.categoria {
     position: relative; 
     margin-right: 16px;
     cursor: pointer; ;
