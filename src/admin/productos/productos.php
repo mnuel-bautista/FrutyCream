@@ -12,11 +12,11 @@ $resultado = mysqli_query($conn, $consulta);
 //Convertir el resultado devuelto por mysql a un arreglo de categorias
 $categorias = mysqli_fetch_all($resultado);
 
-$consulta_productos = "SELECT p.nombre, p.descripcion, p.precio, c.categoria FROM "
-    ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;"; 
-$resultado = mysqli_query($conn, $consulta_productos); 
+$consulta_productos = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, c.categoria FROM "
+    ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;";
+$resultado = mysqli_query($conn, $consulta_productos);
 
-$productos = mysqli_fetch_all($resultado); 
+$productos = mysqli_fetch_all($resultado);
 
 ?>
 
@@ -64,7 +64,7 @@ $productos = mysqli_fetch_all($resultado);
             <div class="barra-superior">
                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#crear-producto-modal">Agregar producto</button>
             </div>
-            
+
             <div class="productos">
                 <table class="table">
                     <thead>
@@ -76,12 +76,15 @@ $productos = mysqli_fetch_all($resultado);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($productos as $producto):  ?>
-                            <tr>
-                                <td scope="col"><?= $producto[0]?></td>
-                                <td scope="col"><?= $producto[1]?></td>
-                                <td scope="col"><?= $producto[2]?></td>
-                                <td scope="col"><?= $producto[3]?></td>
+                        <?php foreach ($productos as $producto) :  ?>
+                            <tr id="<?= $producto[0]?>">
+                                <td scope="col"><?= $producto[1] ?></td>
+                                <td scope="col"><?= $producto[2] ?></td>
+                                <td scope="col"><?= $producto[3] ?></td>
+                                <td scope="col"><?= $producto[4] ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -139,5 +142,5 @@ $productos = mysqli_fetch_all($resultado);
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+<script src="editar.js"></script>
 </html>
