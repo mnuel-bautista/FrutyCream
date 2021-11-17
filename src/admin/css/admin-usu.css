@@ -16,7 +16,7 @@
 }
 .flexbox-item-2{
     background: #FFFBFA;
-    min-height: 200px;
+    min-height: 600px;
     flex-grow: 2;
     flex-basis: 0;
     
