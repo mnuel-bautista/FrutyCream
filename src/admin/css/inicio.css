@@ -1,7 +1,8 @@
 @import url('boton.css');
 @import url('producto.css'); 
 @import url('../../css/tipografia.css');
-@import url('category-menu.css');
+@import url('menu-categorias.css');
+@import url('menu.css');  
 
 body {
     margin: 0px;
@@ -17,7 +18,6 @@ body {
 
 .header {
     width: 250px;
-    background-color: red;
 }
 
 .orden {
@@ -27,20 +27,20 @@ body {
     width: 318px;
 }
 
-.order-title {
+.encabezado-orden {
     position: relative; 
     display: flex;
     align-items: center;
     height: 66px;
 }
 
-.order-title h5 {
+.encabezado-orden h5 {
     margin: 0; 
     margin-left: 16px;
     padding: 0; 
 }
 
-.delete-order {
+.eliminar-orden {
     width: 18px;
     height: 18px;
     display: flex;
@@ -60,7 +60,7 @@ body {
 }
 
 
-.products {
+.productos {
     display: grid;
     row-gap: 12px;
     overflow-y: scroll;
@@ -81,7 +81,7 @@ ul {
     padding-right: 24px; 
 }
 
-.confirm-order {
+.confirmar-orden {
     width: 100%;
     margin-left: 12px;
     margin-right: 12px;
