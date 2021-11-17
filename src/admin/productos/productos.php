@@ -64,7 +64,8 @@ $productos = mysqli_fetch_all($resultado);
             <div class="barra-superior">
                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#crear-producto-modal">Agregar producto</button>
             </div>
-            <div>
+            
+            <div class="productos">
                 <table class="table">
                     <thead>
                         <tr>
