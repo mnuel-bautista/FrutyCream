@@ -3,14 +3,20 @@
 
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
+$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 //Recuperar todas las categorias de productos.
-$consulta = "SELECT id_cat, categoria FROM categoria;"; 
+$consulta = "SELECT id_cat, categoria FROM categoria;";
 //Realiza la consulta a la base de datos
-$resultado = mysqli_query($conn, $consulta); 
+$resultado = mysqli_query($conn, $consulta);
 
 //Convertir el resultado devuelto por mysql a un arreglo de categorias
-$categorias = mysqli_fetch_all($resultado); 
+$categorias = mysqli_fetch_all($resultado);
+
+$consulta_productos = "SELECT p.nombre, p.descripcion, p.precio, c.categoria FROM "
+    ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;"; 
+$resultado = mysqli_query($conn, $consulta_productos); 
+
+$productos = mysqli_fetch_all($resultado); 
 
 ?>
 
@@ -58,6 +64,28 @@ $categorias = mysqli_fetch_all($resultado);
             <div class="barra-superior">
                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#crear-producto-modal">Agregar producto</button>
             </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($productos as $producto):  ?>
+                            <tr>
+                                <td scope="col"><?= $producto[0]?></td>
+                                <td scope="col"><?= $producto[1]?></td>
+                                <td scope="col"><?= $producto[2]?></td>
+                                <td scope="col"><?= $producto[3]?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
 
 
             <div class="modal" id="crear-producto-modal" tabindex="-1" role="dialog">
@@ -87,9 +115,9 @@ $categorias = mysqli_fetch_all($resultado);
                                 </div>
                                 <div class="mb-3">
                                     <label for="categoria-producto">Categoria</label>
-                                    <select name="categoria" name="categoria"   id="categoria-producto">
-                                        <?php foreach($categorias as $categoria): ?>
-                                            <option value="<?=$categoria[0];?>"><?=$categoria[1]?></option>
+                                    <select name="categoria" name="categoria" id="categoria-producto">
+                                        <?php foreach ($categorias as $categoria) : ?>
+                                            <option value="<?= $categoria[0]; ?>"><?= $categoria[1] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
