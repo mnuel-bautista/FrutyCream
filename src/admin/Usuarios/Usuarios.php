@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     
+<?php
+
+$conn = mysqli_connect('localhost', 'root', 'efciqa2208', 'paleteria');
+//Recuperar todas las categorias de productos.
+$consulta = "SELECT id_cat, categoria FROM categoria;";
+//Realiza la consulta a la base de datos
+$resultado = mysqli_query($conn, $consulta);
+
+//Convertir el resultado devuelto por mysql a un arreglo de categorias
+$categorias = mysqli_fetch_all($resultado);
+
+$consulta_productos = "SELECT p.nombre, p.descripcion, p.precio, c.categoria FROM "
+    ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;"; 
+$resultado = mysqli_query($conn, $consulta_productos); 
+
+$productos = mysqli_fetch_all($resultado); 
+
+?>
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,6 +77,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($productos as $producto):  ?>
+                            <tr>
+                                <td scope="col"><?= $producto[0]?></td>
+                                <td scope="col"><?= $producto[1]?></td>
+                                <td scope="col"><?= $producto[2]?></td>
+                                <td scope="col"><?= $producto[3]?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
             </div>
         <div class="flexbox-item flexbox-item-3">
 
