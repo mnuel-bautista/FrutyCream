@@ -85,6 +85,12 @@ $productos = mysqli_fetch_all($resultado);
                                 <td>
                                     <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
                                 </td>
+                                <td>
+                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST">
+                                        <input type="hidden" name="id" value="<?= $producto[0];?>">
+                                        <button type="submit" class="btn btn-link">Eliminar</button>
+                                    </form> 
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -142,5 +148,5 @@ $productos = mysqli_fetch_all($resultado);
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="editar.js"></script>
+<script src="productos.js"></script>
 </html>
