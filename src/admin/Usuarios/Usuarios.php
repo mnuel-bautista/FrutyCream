@@ -37,6 +37,7 @@ $productos = mysqli_fetch_all($resultado);
     <script src="app.js" defer></script>
 </head>
 <body>
+    
     <div class="flexbox-container">
         <nav class="nav-bar">
             <li><a href="#" class="mdc-icon-button material-icons-outlined">
