@@ -85,6 +85,12 @@ $productos = mysqli_fetch_all($resultado);
                                 <td>
                                     <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
                                 </td>
+                                <td>
+                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST">
+                                        <input type="hidden" name="id" value="<?php $producto[0];?>">
+                                        <button type="submit" class="btn btn-link">Eliminar</button>
+                                    </form> 
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
