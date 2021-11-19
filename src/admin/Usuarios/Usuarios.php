@@ -5,19 +5,19 @@
 
 $conn = mysqli_connect('localhost', 'root', 'efciqa2208', 'paleteria');
 //Recuperar todas las categorias de productos.
-$consulta = "SELECT id_cat, categoria FROM categoria;";
+$consulta = "SELECT nombre, apellidos, telefono, tipo_usuario FROM usuarios;";
 //Realiza la consulta a la base de datos
 $resultado = mysqli_query($conn, $consulta);
 
 //Convertir el resultado devuelto por mysql a un arreglo de categorias
 $categorias = mysqli_fetch_all($resultado);
-
+/*
 $consulta_productos = "SELECT p.nombre, p.descripcion, p.precio, c.categoria FROM "
     ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;"; 
 $resultado = mysqli_query($conn, $consulta_productos); 
 
 $productos = mysqli_fetch_all($resultado); 
-
+*/
 ?>
 
 
@@ -78,12 +78,12 @@ $productos = mysqli_fetch_all($resultado);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($productos as $producto):  ?>
+                        <?php foreach($categorias as $usuarios):  ?>
                             <tr>
-                                <td scope="col"><?= $producto[0]?></td>
-                                <td scope="col"><?= $producto[1]?></td>
-                                <td scope="col"><?= $producto[2]?></td>
-                                <td scope="col"><?= $producto[3]?></td>
+                                <td scope="col"><?= $categorias[0]?></td>
+                                <td scope="col"><?= $categorias[1]?></td>
+                                <td scope="col"><?= $categorias[2]?></td>
+                                <td scope="col"><?= $categorias[3]?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
