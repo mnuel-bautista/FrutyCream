@@ -11,13 +11,7 @@ $resultado = mysqli_query($conn, $consulta);
 
 //Convertir el resultado devuelto por mysql a un arreglo de categorias
 $categorias = mysqli_fetch_all($resultado);
-/*
-$consulta_productos = "SELECT p.nombre, p.descripcion, p.precio, c.categoria FROM "
-    ."producto p INNER JOIN categoria c ON p.id_cat = c.id_cat;"; 
-$resultado = mysqli_query($conn, $consulta_productos); 
 
-$productos = mysqli_fetch_all($resultado); 
-*/
 ?>
 
 
