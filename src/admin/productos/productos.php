@@ -37,7 +37,7 @@ $productos = mysqli_fetch_all($resultado);
     <div class="container">
         <div class="header">
             <nav class="nav-bar">
-                <li><a href="#" class="mdc-icon-button material-icons-outlined">
+                <li><a href="http://localhost/proyecto-pw/src/admin/Inicio.php" class="mdc-icon-button material-icons-outlined">
                         <span>home</span>
                         <p class="s1">Inicio</p>
                     </a></li>
