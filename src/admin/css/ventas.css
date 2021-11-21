@@ -15,6 +15,11 @@ html, body {
     justify-content: space-between;
 }
 
+.seleccionar-fecha {
+    display: flex;
+    align-items: center;
+}
+
 .contenedor {
     display: flex;
     flex-direction: row;
@@ -24,11 +29,14 @@ html, body {
 }
 
 .contenido {
+    display: flex;
     flex: 1; 
 }
 
 .contenido-ventas {
     display: flex;
+    flex: 1; 
+    flex-direction: column;
     justify-content: stretch;
     align-self: stretch;
 }

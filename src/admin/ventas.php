@@ -4,10 +4,10 @@
 <?php
 
 
-if(isset($_POST['fecha'])) {
-    $fecha = $_POST['fecha']; 
+if (isset($_POST['fecha'])) {
+    $fecha = $_POST['fecha'];
 } else {
-    $fecha = date("Y-m-d"); 
+    $fecha = date("Y-m-d");
 }
 
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
@@ -37,17 +37,24 @@ $resultado = $conn->query($consulta);
 
 $producto_mas_vendido = $resultado->fetch_assoc();
 
+//Recuperar los productos más vendidos
 $consulta = "SELECT a.id_producto, p.nombre, MAX(a.cantidad) as mas_vendido FROM articulos a 
-INNER JOIN producto p ON a.id_producto = p.id_producto
+INNER JOIN producto p ON a.id_producto = p.id_producto 
+INNER JOIN ventas v ON v.id_venta = a.id_venta WHERE v.fecha = '$fecha'
 group by id_producto LIMIT 5;";
 
 $resultado = $conn->query($consulta);
 $productos_mas_vendidos = $resultado->fetch_all(MYSQLI_ASSOC);
 
 //Consulta el total de los ingresos
-$consulta = "SELECT sum(a.cantidad * p.precio) AS ingresos FROM articulos a INNER JOIN producto p ON a.id_producto = p.id_producto;"; 
+$consulta = "SELECT sum(a.cantidad * p.precio) AS ingresos 
+FROM articulos a 
+INNER JOIN producto p ON a.id_producto = p.id_producto 
+INNER JOIN ventas v ON v.id_venta = a.id_venta
+WHERE v.fecha = '$fecha';";
 $resultado = $conn->query($consulta);
-$ingresos = $resultado->fetch_assoc(); 
+$ingresos = $resultado->fetch_assoc();
+
 
 ?>
 
@@ -92,15 +99,15 @@ $ingresos = $resultado->fetch_assoc();
         </div>
 
         <div class="contenido">
-            <div class="barra-superior">
-                <p>Manuel Bautista</p>
-                <form action="http://localhost/proyecto-pw/src/admin/ventas.php" method="POST">
-                    <input type="date" name="fecha" value="<?=$fecha?>">
-                    <button type="input" class="btn btn-link">Actualizar</button>
-                </form>
-            </div>
-
             <div class="contenido-ventas">
+                <div class="barra-superior">
+                    <p>Manuel Bautista</p>
+                    <form class="seleccionar-fecha" action="http://localhost/proyecto-pw/src/admin/ventas.php" method="POST">
+                        <input type="date" name="fecha" value="<?= $fecha ?>">
+                        <button type="input" class="btn btn-link">Actualizar</button>
+                    </form>
+                </div>
+
                 <div class="table-responsive" style="max-width: 100%">
                     <table class="table">
                         <thead>
@@ -126,32 +133,35 @@ $ingresos = $resultado->fetch_assoc();
                     </table>
 
                 </div>
-
-                <div class="estadisticas">
-                    <div class="producto-mas-vendido card">
-                        <h6 class="card-title">Producto más vendido</h6>
-                        <p class="b2"><?= (isset($producto_mas_vendido['nombre'])) ? $producto_mas_vendido['nombre'] : 'No hay información'; ?></p>
-                    </div>
-                    <div class="ingresos tarjeta">
-                        <h6 class="card-title">Ingresos</h6>
-                        <p class="b2"><?= $ingresos['ingresos']; ?></p>
-                    </div>
-                    <div class="productos-mas-vendidos card">
-                        <h6 class="card-title">Productos más vendidos</h6>
-                        <ul class="list-group list-group-flush">
-                            <?php foreach ($productos_mas_vendidos as $producto) : ?>
-                                <li class="list-group-item"><?= $producto['nombre']; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
+            <div class="estadisticas">
+                <div class="producto-mas-vendido card">
+                    <h6 class="card-title">Producto más vendido</h6>
+                    <p class="b2"><?= (isset($producto_mas_vendido['nombre'])) ? $producto_mas_vendido['nombre'] : 'No hay información'; ?></p>
+                </div>
+                <div class="ingresos tarjeta">
+                    <h6 class="card-title">Ingresos</h6>
+                    <p class="b2"><?= $ingresos['ingresos']; ?></p>
+                </div>
+                <div class="productos-mas-vendidos card">
+                    <h6 class="card-title">Productos más vendidos</h6>
+                    <ul class="list-group list-group-flush">
+                        <?php foreach ($productos_mas_vendidos as $producto) : ?>
+                            <li class="list-group-item"><?= $producto['nombre']; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div>
+                    <canvas class="grafica" width="400px" height="400px">
 
-
+                    </canvas>
+                </div>
+            </div>
         </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="productos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+<script src="js/ventas.js"></script>
 
 </html>
