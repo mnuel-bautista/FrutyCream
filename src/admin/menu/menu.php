@@ -1,10 +1,10 @@
 <div class="header">
             <nav class="nav-bar">
-                <li><a href="http://localhost/proyecto-pw/src/admin/Inicio.php  " class="mdc-icon-button material-icons-outlined elemento-seleccionado">
+                <li><a href="http://localhost/proyecto-pw/src/admin/Inicio.php" class="mdc-icon-button material-icons-outlined elemento-seleccionado">
                     <span>home</span>
                     <p class="s1">Inicio</p>
                 </a></li>
-                <li><a href="#" class="mdc-icon-button material-icons-outlined">
+                <li><a href="http://localhost/proyecto-pw/src/admin/ventas.php" class="mdc-icon-button material-icons-outlined">
                     <span>shopping_bag</span>
                     <p class="s1">Ventas</p>
                 </a></li>
