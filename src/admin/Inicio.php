@@ -1,5 +1,14 @@
 
 <?php
+
+session_start(); 
+$session = $_SESSION['usuario'];        
+
+if($session == null || $session == '') {
+    echo "Usted no tiene autorización"; 
+    die(); 
+} 
+
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
 
 $consulta = 'SELECT * FROM producto;'; 
