@@ -1,0 +1,70 @@
+.flexbox-container {
+    display: flex;
+}
+
+.flexbox-item{
+    width: 500px;
+    margin: 10px;
+    padding: 0;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.flexbox-item-1{
+    min-height: 600px;
+    flex-shrink: 0;
+    
+}
+.flexbox-item-2{
+    background: #FFFBFA;
+    min-height: 600px;
+    flex-grow: 2;
+    flex-basis: 0;
+    
+}
+
+.buscar{
+    position:absolute;
+    padding: 5px;
+}
+
+.buscar input{
+    width: 240px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #000;
+    outline: none;
+    border: 1px solid silver;border-radius: 30px;
+    transition:  all 0.6s ease;
+
+}
+/*
+.btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    width: 50px;
+    height: 50px;
+    line-height: 55px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor:pointer;
+
+}
+
+.buscar:hover input{
+    width: 240px;
+}
+*/
+.buscar:hover input:focus{
+    width: 240px;
+}
+
+.usuarios {
+    flex: 1; 
+    
+}
