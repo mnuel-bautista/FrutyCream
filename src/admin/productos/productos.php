@@ -107,25 +107,25 @@ $productos = mysqli_fetch_all($resultado);
                         </div>
                         <div class="modal-body">
                             <form id="producto-formulario" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
-                                <div class="mb-3">
+                                <div class="mb-3 form-group">
                                     <label for="nombre-producto">Nombre</label>
-                                    <input type="text" name="nombre" id="nombre-producto">
+                                    <input type="text" name="nombre" class="form-control" id="nombre-producto">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 form-group">
                                     <label for="descripcion-producto">Descripcion</label>
-                                    <input type="text" name="descripcion" id="descripcion-producto">
+                                    <input type="text" name="descripcion" class="form-control" id="descripcion-producto">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 form-group">
                                     <label for="precio-producto">Precio</label>
-                                    <input type="number" name="precio" id="precio-producto">
+                                    <input type="number" name="precio" class="form-control" id="precio-producto">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 form-group">
                                     <label for="imagen-producto">Imagen</label>
-                                    <input type="file" name="img" id="imagen-producto" accept="image/*">
+                                    <input type="file" name="img" class="form-control" id="imagen-producto" accept="image/*">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 form-group">
                                     <label for="categoria-producto">Categoria</label>
-                                    <select name="categoria" name="categoria" id="categoria-producto">
+                                    <select name="categoria" name="categoria" class="form-control" id="categoria-producto">
                                         <?php foreach ($categorias as $categoria) : ?>
                                             <option value="<?= $categoria[0]; ?>"><?= $categoria[1] ?></option>
                                         <?php endforeach; ?>
