@@ -15,6 +15,8 @@ if(!isset($usuario)) {
 }
 
 if($nombre == $usuario['nombre'] && $contraseña == $usuario['pass']) {
+    session_start(); 
+    $_SESSION['usuario'] = $nombre; 
     header('Location: http://localhost/proyecto-pw/src/admin/Inicio.php'); 
 } else {
     echo "<p>Credenciales incorrectas</p>"; 
