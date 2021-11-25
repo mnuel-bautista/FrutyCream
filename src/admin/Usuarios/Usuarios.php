@@ -61,8 +61,9 @@ $usuarios = mysqli_fetch_all($resultado);
         </nav>
         <div class="flexbox-item flexbox-item-2">
             <div class="buscar">
-                <input type="text" placeholder="Buscar usuarios..." required>
+                <input type="text" placeholder="Buscar usuarios...">
                 <button class="boton"><a href ="Registrar_Usu.php" target="_blank"></a>Crear usuario</button>
+                
             </div>
             <hr>
             <hr>
@@ -86,7 +87,7 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1]?></td>
                                 <td scope="col"><?= $usuarios[2]?></td>
                                 <td scope="col"><?= $usuarios[3]?></td>
-                                <td scope="col"><a href ="#" target="_blank">Cambiar contraseña</a></td>
+                                <td scope="col"><a href ="Registrar_Usu.php" target="_blank">Cambiar contraseña</a></td>
                                 <td scope="col"><a href ="#" target="_blank">Editar</a></td>
                                 <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
                             </tr>
