@@ -85,7 +85,7 @@ $productos = mysqli_fetch_all($resultado);
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="producto-formulario" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
+                            <form id="producto-formulario" enctype="multipart/form-data" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
                                 <div class="mb-3 form-group">
                                     <label for="nombre-producto">Nombre</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre-producto">

@@ -126,6 +126,7 @@ span {
     margin-left: 120px;
     margin-right: 120px;
     padding-bottom: 80px;
+    row-gap: 24px;
 }
 
 .producto {
