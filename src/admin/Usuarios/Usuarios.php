@@ -3,14 +3,15 @@
     
 <?php
 
+//Conexion
 $conn = mysqli_connect('localhost', 'root', 'efciqa2208', 'paleteria');
-//Recuperar todas las categorias de productos.
+//Recuperar todas las categorias de usuarios
 $consulta = "SELECT nombre, apellidos, telefono, tipo_usuario FROM usuarios;";
 //Realiza la consulta a la base de datos
 $resultado = mysqli_query($conn, $consulta);
 
 //Convertir el resultado devuelto por mysql a un arreglo de categorias
-$categorias = mysqli_fetch_all($resultado);
+$usuarios = mysqli_fetch_all($resultado);
 
 ?>
 
@@ -22,6 +23,9 @@ $categorias = mysqli_fetch_all($resultado);
     <title>Usuarios</title>
     <link rel="stylesheet" href="../css/admin-usu.css">
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../menu/menu.php">
+    <link rel="stylesheet" href="../css/boton.css">
+    <link rel="shortcut icon" href="../../img/icon1.ico"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="shortcut icon" href="C:/Users/jczen/Desktop/Universidad/Semestre AD2021/ProWeb/proyecto-pw/src/img/icon1.ico"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -58,7 +62,11 @@ $categorias = mysqli_fetch_all($resultado);
         <div class="flexbox-item flexbox-item-2">
             <div class="buscar">
                 <input type="text" placeholder="Buscar usuarios..." required>
+                <button class="boton"><a href ="Registrar_Usu.php" target="_blank"></a>Crear usuario</button>
             </div>
+            <hr>
+            <hr>
+            <hr>
             <hr>
 
             <div class="usuarios">
@@ -72,21 +80,22 @@ $categorias = mysqli_fetch_all($resultado);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($categorias as $usuarios):  ?>
+                        <?php foreach($usuarios as $usuarios):  ?>
                             <tr>
-                                <td scope="col"><?= $categorias[0]?></td>
-                                <td scope="col"><?= $categorias[1]?></td>
-                                <td scope="col"><?= $categorias[2]?></td>
-                                <td scope="col"><?= $categorias[3]?></td>
+                                <td scope="col"><?= $usuarios[0]?></td>
+                                <td scope="col"><?= $usuarios[1]?></td>
+                                <td scope="col"><?= $usuarios[2]?></td>
+                                <td scope="col"><?= $usuarios[3]?></td>
+                                <td scope="col"><a href ="#" target="_blank">Cambiar contraseña</a></td>
+                                <td scope="col"><a href ="#" target="_blank">Editar</a></td>
+                                <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
             </div>
-        <div class="flexbox-item flexbox-item-3">
-
-        </div>
+      
         
         
         </div>
