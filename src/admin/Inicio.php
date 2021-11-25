@@ -1,6 +1,6 @@
 
 <?php
-
+$pagina = "inicio"; 
 session_start(); 
 $session = $_SESSION['usuario'];        
 
