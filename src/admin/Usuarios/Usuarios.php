@@ -87,7 +87,7 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1]?></td>
                                 <td scope="col"><?= $usuarios[2]?></td>
                                 <td scope="col"><?= $usuarios[3]?></td>
-                                <td scope="col"><a href ="Registrar_Usu.php" target="_blank">Cambiar contraseña</a></td>
+                                <td scope="col"><a href ="Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
                                 <td scope="col"><a href ="#" target="_blank">Editar</a></td>
                                 <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
                             </tr>
