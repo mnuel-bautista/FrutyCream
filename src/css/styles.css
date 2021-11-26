@@ -36,10 +36,12 @@ nav ul li a {
 }
 
 .logo {
-    width: 120px;
+    width: 220px;
     height: 56px;
     margin-left: 120px;
-    background-color: rgba(196, 196, 196, 1);
+    font-size: 24px;
+    font-family: 'Satisfy', cursive;
+    color: #EFF6F8;
 }
 
 .ver-mas {
