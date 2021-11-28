@@ -1,11 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 .header {
     width: 250px;
 }
 
 .nav-bar {
     height: 100%;
-    padding-top: 56px;
     background-color: #384053;
+}
+
+nav h6 {
+    box-sizing: border-box;
+    color: #F7FAF9;
+    text-align: center;
+    height: 64px;
+    align-self: center;
+    line-height: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin: 0px;
+    font-family: 'Satisfy', cursive;
 }
 
 .nav-bar ul {

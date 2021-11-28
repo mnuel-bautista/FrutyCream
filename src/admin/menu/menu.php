@@ -1,6 +1,6 @@
 <div class="header">
-    
     <nav class="nav-bar">
+        <h6>La michoacana</h6>
         <ul>
             <li><a href="http://localhost/proyecto-pw/src/admin/Inicio.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'inicio' ? 'elemento-seleccionado' : ''; ?>">
                     <span>home</span>
