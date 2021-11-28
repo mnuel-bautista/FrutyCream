@@ -1,27 +1,27 @@
-
 <?php
-$pagina = "inicio"; 
-session_start(); 
-$session = $_SESSION['usuario'];        
+$pagina = "inicio";
+session_start();
+$session = $_SESSION['usuario'];
 
-if($session == null || $session == '') {
-    echo "Usted no tiene autorización"; 
-    die(); 
-} 
+if ($session == null || $session == '') {
+    echo "Usted no tiene autorización";
+    die();
+}
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
+$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 
-$consulta = 'SELECT * FROM producto;'; 
+$consulta = 'SELECT * FROM producto;';
 $productos = mysqli_query($conn, $consulta);
 
-$categories_query = 'SELECT * FROM categoria;'; 
-$result = mysqli_query($conn, $categories_query); 
+$categories_query = 'SELECT * FROM categoria;';
+$result = mysqli_query($conn, $categories_query);
 
-$categorias = mysqli_fetch_all($result); 
+$categorias = mysqli_fetch_all($result);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,24 +31,23 @@ $categorias = mysqli_fetch_all($result);
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/orden-articulo.css">
     <link rel="stylesheet" href="css/inicio.css">
-    <script src="js/inicio.js" defer></script> 
+    <script src="js/inicio.js" defer></script>
     <script src="js/categorias.js" defer></script>
     <script src="js/orden.js" defer></script>
     <!-- Para agregar algunos iconos -->
 </head>
+
 <body>
 
     <div class="container">
-        <div class="header">
-            <?php include('menu/menu.php'); ?> 
-        </div>
+        <?php include('menu/menu.php'); ?>
 
         <div class="content">
             <ul class="categorias s2">
                 <li class="categoria selected">All</li>
-                    <?php foreach($categorias as $categoria): ?>
-                        <li class="categoria" id="<?=$categoria[0]?>"><?=$categoria[1]?></li>
-                    <?php endforeach; ?>
+                <?php foreach ($categorias as $categoria) : ?>
+                    <li class="categoria" id="<?= $categoria[0] ?>"><?= $categoria[1] ?></li>
+                <?php endforeach; ?>
                 <span class="divider"></span>
             </ul>
             <ul class="productos"></ul>

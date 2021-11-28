@@ -3,18 +3,22 @@
 }
 
 .nav-bar {
+    height: 100%;
     padding-top: 56px;
+    background-color: #384053;
+}
+
+.nav-bar ul {
+    padding: 0px;
+    margin-top: 0px;
+    height: 100%;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.nav-bar li {
-    color: blue;
-}
-
-.nav-bar li a {
+.nav-bar ul li a {
     width: 228px;
     padding-left: 12px;
     padding-right: 12px;
@@ -24,21 +28,22 @@
     flex-direction: row;
     align-items: center;
     column-gap: 16px;
+    transition: background-color 300ms ease-out;
 }
 
-.nav-bar li a p {
+.nav-bar ul li a p {
     font-weight: 300;
 }
 
 .elemento-seleccionado {
-    color: rgba(255, 84, 66, 1);
-    background-color: rgba(253, 159, 150, 0.12);
+    color: #F7FAF9;
+    background-color: rgba(253, 159, 150, 1);
 }
 
-.nav-bar li a:not(.elemento-seleccionado) {
-    color: rgba(54, 40, 38, 1);
+.nav-bar ul li a:not(.elemento-seleccionado) {
+    color: #F7FAF9;
 }
 
-.nav-bar li a:hover {
-    color: rgba(255, 84, 66, 1);
+.nav-bar ul li a:hover {
+    color: #F7FAF9;
 }
