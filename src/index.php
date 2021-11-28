@@ -46,12 +46,12 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
         <div class="info">
             <h1 class="info-titulo">Prueba los mejores helados</h1>
             <p class="info-descripcion">La Heladería (Inserte nombre) le ofrece los sabores más exquisitos directo a tu paladar en forma de deliciosas paletas y helados elaborados tradicionalmente con ingredientes naturales</p>
-            <button class="ver-mas">Productos</button>
+            <a href="#nuestros-productos"><button class="ver-mas">Productos</button></a>
         </div>
     </div>
     <div class="content">
 
-        <div class="nuestros-productos">
+        <div class="nuestros-productos" id="nuestros-productos">
             <h2>Nuestros productos</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus ligula ut varius dictum. Suspendisse.</p>
         </div>
