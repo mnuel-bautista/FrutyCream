@@ -45,7 +45,7 @@ $productos = mysqli_fetch_all($resultado);
             </div>
 
             <div class="productos">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -65,7 +65,7 @@ $productos = mysqli_fetch_all($resultado);
                                     <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
                                 </td>
                                 <td>
-                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST">
+                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST" onsubmit="return confirmarEliminacion();">
                                         <input type="hidden" name="id" value="<?= $producto[0];?>">
                                         <button type="submit" class="btn btn-link">Eliminar</button>
                                     </form> 
