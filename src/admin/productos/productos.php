@@ -36,7 +36,7 @@ $productos = mysqli_fetch_all($resultado);
 </head>
 
 <body>
-    <div class="container">
+    <div class="contenedor">
        <?php include('../menu/menu.php');?>
 
         <div class="contenido">
