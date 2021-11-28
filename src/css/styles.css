@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 @import url('../css/tipografia.css');
-html {
+html,
+p {
     margin: 0px;
     padding: 0px;
 }
@@ -11,39 +12,6 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-nav {
-    height: 56px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav ul {
-    display: flex;
-    width: auto;
-    justify-content: flex-end;
-    margin-right: 120px;
-}
-
-nav ul li {
-    display: inline-block;
-    padding-left: unset;
-    padding-right: unset;
-    margin-left: 120px;
-}
-
-nav ul li a {
-    color: #EFF6F8
-}
-
-.logo {
-    width: 220px;
-    height: 56px;
-    margin-left: 120px;
-    font-size: 24px;
-    font-family: 'Satisfy', cursive;
-    color: #EFF6F8;
-}
-
 .ver-mas {
     width: 220px;
     height: 48px;
@@ -52,7 +20,7 @@ nav ul li a {
     border: none;
     font-weight: bold;
     letter-spacing: 1.5px;
-    margin-top: 40px;
+    margin-top: 12px;
     border-radius: 16px;
     transition: box-shadow .3s;
 }
@@ -67,7 +35,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: calc(100% - 120px);
     justify-content: center;
 }
 
@@ -80,16 +48,13 @@ nav ul li a {
 
 .info-descripcion {
     margin-bottom: 0px;
+    margin-top: 12px;
     width: 464px;
     line-height: 150%;
     font-size: 14px;
     line-height: 2.3;
     text-align: center;
     color: white;
-}
-
-span {
-    color: #f09188;
 }
 
 .hero {
@@ -104,7 +69,6 @@ span {
 }
 
 .nuestros-productos {
-    width: 469px;
     padding-top: 80px;
     padding-bottom: 80px;
     text-align: center;
@@ -113,12 +77,12 @@ span {
 }
 
 .nuestros-productos h2 {
+    margin-top: 0;
     color: rgba(54, 40, 38, 0.87);
 }
 
 .nuestros-productos p {
-    width: 469px;
-    font-size: 22.65;
+    text-align: center;
     color: rgba(54, 40, 38, 0.87);
 }
 
@@ -129,10 +93,10 @@ span {
     margin-right: 120px;
     padding-bottom: 80px;
     row-gap: 24px;
+    column-gap: 24px;
 }
 
 .producto {
-    width: 320px;
     padding-bottom: 12px;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -184,7 +148,11 @@ img {
 }
 
 .producto .imagen .descripcion {
+    box-sizing: border-box;
     position: absolute;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
     margin: 0;
     top: 0;
     margin: 0px 0px;
@@ -211,4 +179,38 @@ img {
     width: 100%;
     height: 296px;
     background-color: rgba(248, 232, 230, 1);
+}
+
+@media (max-width: 786px) {
+    .info-titulo {
+        font-size: 34px;
+    }
+    .info-descripcion {
+        font-size: 12px;
+        width: auto;
+    }
+    .ver-mas {
+        width: 180px;
+        height: 40px;
+    }
+    .nuestros-productos h2 {
+        font-size: 42px;
+        width: auto;
+    }
+    .nuestros-productos p {
+        width: auto;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    .productos {
+        grid-template-columns: 1fr 1fr;
+        margin: 24px;
+    }
+}
+
+@media (max-width: 375px) {
+    .productos {
+        grid-template-columns: 1fr;
+        margin: 24px;
+    }
 }

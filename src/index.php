@@ -18,11 +18,13 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/menu-inicio.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="img/icon1.ico" />
-    <script src="app.js" defer></script>
+
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -31,9 +33,14 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
             <div class="logo">
                 <p>La michoacana</p>
             </div>
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
+            <span class="material-icons-outlined nav-toggle">
+                menu
+            </span>
+            <ul class="menu-navegacion">
+                <li><a href="index.php" class="active">Inicio</a></li>
                 <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li class="boton-cerrar"><a href="">Cerrar</a></li>
             </ul>
         </nav>
         <div class="info">

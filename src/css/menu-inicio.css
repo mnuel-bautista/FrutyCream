@@ -1,18 +1,39 @@
 nav {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    justify-items: center;
     width: 100%;
     height: 120px;
+    padding-left: 120px;
     margin: 0;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Satisfy', cursive;
+    color: #EFF6F8;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-around;
-    flex: 1;
-    padding: 0;
+    width: auto;
+    justify-content: flex-end;
+    margin-right: 120px;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-left: unset;
+    padding-right: unset;
+    margin-left: 120px;
+}
+
+nav ul li a {
+    color: #EFF6F8
 }
 
 li {
@@ -53,12 +74,74 @@ nav button:hover {
     cursor: pointer;
 }
 
-.active::before {
+li a::before {
     content: "";
+    width: 0;
     background: rgba(252, 185, 178, 1);
     position: absolute;
     height: 3px;
     left: 0;
     right: 0;
     bottom: -10px;
+    transition: all 300ms ease-out;
+}
+
+li a:hover::before {
+    width: 100%;
+}
+
+.nav-toggle {
+    color: #F7FAF9;
+    display: none;
+    cursor: pointer;
+}
+
+.boton-cerrar {
+    display: none;
+}
+
+@media (max-width: 786px) {
+    nav {
+        box-sizing: border-box;
+        height: 56px;
+        padding: 0px 24px;
+    }
+    .logo {
+        margin-left: 0;
+    }
+    nav ul {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        flex-direction: column;
+        display: none;
+        opacity: 0;
+        transition: all 300ms ease-out;
+    }
+    .nav-toggle {
+        display: inline-block;
+    }
+    nav ul {
+        width: 100%;
+        padding-left: 0px;
+        margin: 0px;
+        row-gap: 24px;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0px auto;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+    .menu-visible {
+        display: flex;
+        opacity: 1;
+        overscroll-behavior: contain;
+        height: 100%;
+        background-color: #384053;
+    }
+    .boton-cerrar {
+        display: inline-flex;
+    }
 }
