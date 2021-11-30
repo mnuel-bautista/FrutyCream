@@ -39,7 +39,7 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
             <ul class="menu-navegacion">
                 <li><a href="index.php" class="active">Inicio</a></li>
                 <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
                 <li class="boton-cerrar"><a href="">Cerrar</a></li>
             </ul>
         </nav>
