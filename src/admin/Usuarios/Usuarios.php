@@ -54,7 +54,7 @@ $usuarios = mysqli_fetch_all($resultado);
                     <span>money_off</span>
                     <p class="s1">Promociones</p>
                 </a></li>
-            <li><a href="http://localhost/proyecto-pw/src/admin/users/users.php" class="mdc-icon-button material-icons-outlined elemento-seleccionado">
+            <li><a href="Usuarios.php" class="mdc-icon-button material-icons-outlined elemento-seleccionado">
                     <span>person</span>
                     <p class="s1">Usuarios</p>
                 </a></li>
@@ -63,7 +63,6 @@ $usuarios = mysqli_fetch_all($resultado);
             <div class="buscar">
                 <input type="text" placeholder="Buscar usuarios...">
                 <button class="boton"><a href ="Registrar_Usu.php" target="_blank"></a>Crear usuario</button>
-                
             </div>
             <hr>
             <hr>
