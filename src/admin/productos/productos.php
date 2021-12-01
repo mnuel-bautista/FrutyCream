@@ -3,6 +3,8 @@
 
 <?php
 
+$pagina = "productos"; 
+
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 //Recuperar todas las categorias de productos.
 $consulta = "SELECT id_cat, categoria FROM categoria;";
@@ -34,31 +36,8 @@ $productos = mysqli_fetch_all($resultado);
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <nav class="nav-bar">
-                <li><a href="http://localhost/proyecto-pw/src/admin/Inicio.php" class="mdc-icon-button material-icons-outlined">
-                        <span>home</span>
-                        <p class="s1">Inicio</p>
-                    </a></li>
-                <li><a href="http://localhost/proyecto-pw/src/admin/ventas.php" class="mdc-icon-button material-icons-outlined">
-                        <span>shopping_bag</span>
-                        <p class="s1">Ventas</p>
-                    </a></li>
-                <li><a href="#" class="mdc-icon-button material-icons-outlined elemento-seleccionado">
-                        <span>inventory_2</span>
-                        <p class="s1">Productos</p>
-                    </a></li>
-                <li><a href="#" class="mdc-icon-button material-icons-outlined">
-                        <span>money_off</span>
-                        <p class="s1">Promociones</p>
-                    </a></li>
-                <li><a href="http://localhost/proyecto-pw/src/admin/users/users.php" class="mdc-icon-button material-icons-outlined">
-                        <span>person</span>
-                        <p class="s1">Usuarios</p>
-                    </a></li>
-            </nav>
-        </div>
+    <div class="contenedor">
+       <?php include('../menu/menu.php');?>
 
         <div class="contenido">
             <div class="barra-superior">
@@ -66,7 +45,7 @@ $productos = mysqli_fetch_all($resultado);
             </div>
 
             <div class="productos">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -86,7 +65,7 @@ $productos = mysqli_fetch_all($resultado);
                                     <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
                                 </td>
                                 <td>
-                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST">
+                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST" onsubmit="return confirmarEliminacion();">
                                         <input type="hidden" name="id" value="<?= $producto[0];?>">
                                         <button type="submit" class="btn btn-link">Eliminar</button>
                                     </form> 
@@ -106,7 +85,7 @@ $productos = mysqli_fetch_all($resultado);
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="producto-formulario" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/crear.php">
+                            <form id="producto-formulario" enctype="multipart/form-data" method="POST" action="http://localhost/proyecto-pw/src/admin/productos/crear.php">
                                 <div class="mb-3 form-group">
                                     <label for="nombre-producto">Nombre</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre-producto">
