@@ -33,7 +33,11 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #EFF6F8
+    color: #EFF6F8;
+}
+
+nav ul li a:hover {
+    color: #FCB9B2;
 }
 
 li {

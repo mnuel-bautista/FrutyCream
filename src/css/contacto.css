@@ -1,15 +1,25 @@
+@import url('../css/tipografia.css');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    /*background-image: linear-gradient(rgba(151, 147, 170, 0.35), rgba(151, 147, 170, 0.35)), url('../img/contacto.jpg');*/
+    background-image: linear-gradient(rgba(38, 34, 54, 0.651), rgba(38, 34, 54, 0.651)), url('../img/contacto.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto Condensed';
+}
+
 .contenedor {
     position: relative;
-    min-height: 100vh;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: center;
+    min-height: calc(100vh - 120px);
+    padding: 0px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -17,20 +27,90 @@
 .titulo {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    grid-column: 1 / 2;
+    color: #F7FAF9;
+    justify-self: flex-start;
 }
 
 .contenido {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    color: #F7FAF9;
+}
+
+.contacto {
+    color: #F7FAF9;
+    grid-column: 1 / 2;
+}
+
+.contacto-info {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.contacto-info p {
+    grid-column: 2;
+}
+
+.contacto-info h4 {
+    color: #FCB9B2;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-titulo h4 {
+    color: #FCB9B2;
 }
 
 form {
     padding: 24px;
+    color: #384053;
 }
 
 .formulario-de-contacto {
     width: 320px;
+    align-self: center;
+    justify-self: center;
+}
+
+@media (max-width: 786px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+    .titulo {
+        justify-self: center;
+    }
+    .contacto {
+        grid-column: 1fr;
+        justify-self: center;
+    }
+    .formulario-de-contacto {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 425px) {
+    .contenedor {
+        padding: 0px 24px;
+    }
+    .titulo h2 {
+        font-size: 42px;
+    }
+    .contacto {
+        grid-column: 1fr;
+        justify-self: center;
+    }
+    .formulario-de-contacto {
+        grid-column: span 2;
+    }
 }
