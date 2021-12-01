@@ -1,0 +1,32 @@
+@import url('../../css/tipografia.css');
+@import url('menu.css');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+    font-family: 'Roboto Condensed';
+}
+
+.contenedor {
+    display: flex;
+    height: 100%;
+}
+
+.contenido {
+    margin: 0px 12px;
+    width: calc(100% - 24px);
+}
+
+p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.mensajes {
+    flex: 1;
+    overflow-y: auto;
+}

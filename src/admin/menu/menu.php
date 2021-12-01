@@ -14,6 +14,10 @@
                     <span>inventory_2</span>
                     <p class="s1">Productos</p>
                 </a></li>
+            <li><a href="http://localhost/proyecto-pw/src/admin/mensajes.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'mensajes' ? 'elemento-seleccionado' : ''; ?>">
+                    <span>chat_bubble_outline</span>
+                    <p class="s1">Mensajes</p>
+                </a></li>
             <li><a href="#" class="mdc-icon-button material-icons-outlined <?= $pagina == 'promociones' ? 'elemento-seleccionado' : ''; ?>">
                     <span>money_off</span>
                     <p class="s1">Promociones</p>

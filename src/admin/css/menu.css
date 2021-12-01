@@ -24,7 +24,7 @@ nav h6 {
 .nav-bar ul {
     padding: 0px;
     margin-top: 0px;
-    height: 100%;
+    height: calc(100% - 64px);
     list-style-type: none;
     display: flex;
     flex-direction: column;
