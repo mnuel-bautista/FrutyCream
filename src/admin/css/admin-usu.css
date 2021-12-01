@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+@import url('../../css/tipografia.css');
+
+body{
+    display: flex;
+    height: 100%;
+}
+html{
+    height: 100%;
+}
 .flexbox-container {
     display: flex;
 }
-
+.contenido{
+    flex: 1;
+}
 .flexbox-item{
     width: 500px;
     margin: 10px;
@@ -34,8 +46,8 @@
 
 */
 .buscar{
-    position:absolute;
     padding: 5px;
+
 }
 
 .buscar input{
@@ -55,6 +67,6 @@
 }
 
 .usuarios {
-    flex: 1; 
-    
+    width: 100%;
+    margin-top: 24px;
 }

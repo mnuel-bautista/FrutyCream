@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../../css/Usuarios.css">
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="shortcut icon" href="../../img/icon1.ico"/>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+   <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.all.min.js"></script>-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Registrar usuarios</title>
     <?php include("../conexion/conexion.php"); ?>
 </head>
@@ -30,12 +31,12 @@
         </div>
         <!-- Formulario para ingresar los datos de los nuevos usuarios -->
         <!-- Cada input representa algún tipo de información que se puede ingresar, como nombre, apellidos, etc..-->
-        <form action="" id="formulario-usuario" method="post">
+        <form action="" id="formulario-usuario" method="post" onsubmit="return validarCampos();">
             <h4>Registrar Usuario</h4>
             <div class="nombre-completo">
                 <div class="campo-formulario">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nom_Usu" id="nombre" onkeyup="javascript:this.value = this.value.toUpperCase(); ">
+                    <input type="text" name="nombre_Usu" id="nombre" onkeyup="javascript:this.value = this.value.toUpperCase(); ">
                     <small>El nombre no debe de estar vacío</small>
                 </div>
                 <div class="campo-formulario apellidos">
@@ -61,7 +62,7 @@
             </div>
             <div class="campo-formulario">
                 <label for="sexo">Selecciona el género</label>
-                <select name="sexo" id="sexo">
+                <select name="lst_sexo" id="sexo">
                     <option>Seleccionar...</option>
                     <option>Mujer</option>
                     <option>Hombre</option>
@@ -87,29 +88,29 @@
             </div>
             <input type="submit" name="btn_guardar" id="submit" value="Guardar">
             <?php
-
-                        //obtener las variables
+               
+               if(isset($_POST["nombre_Usu"]) && isset($_POST["apellido_Usu"]) && isset($_POST["contra_Usu"]) && isset($_POST["tel_Usu"]) && isset($_POST["tipo_usuario"]) && isset($_POST["lst_sexo"])){
+                    //obtener las variables
                         $nombre = $_POST['nombre_Usu'];
                         $apellidos = $_POST['apellido_Usu'];
                         $pass = $_POST['contra_Usu'];
                         $telefono = $_POST['tel_Usu'];
                         $tipo_usuario = $_POST['tipo_usuario'];
                         $genero = $_POST['lst_sexo'];
-                        ?>
-            <?php
-            $cons = insert(
-                              'usuarios',
-                              'NULL,"' . $nombre . '","' . $apellidos . '","' . $pass . '",' . $tipo_usuario . ',"' . $telefono . '","' . $genero . '"');
-                        if ($cons) {
-                        ?>
-                              window.alert("El registro fue un exito");
-                                    
-                        <?php
-                        } else {
-                        ?>   window.alert("Error al registrar.");
-                        <?php
-                        }
-                        ?>
+                        $cons = insert(
+                            'usuarios',
+                            'NULL,"' . $nombre . '","' . $apellidos . '","' . $pass . '","' . $tipo_usuario . '","' . $telefono . '","' . $genero . '"');
+                      if ($cons) {
+                          ?>
+                        <script>swal("¡Registro exitoso!", "¡Se ha registrado al usuario!", "success");</script>
+                    <?php
+                } else {
+                    ?>
+                        <script>swal("Oops", "No se ha podido hacer el registro", "error");</script>
+              <?php }
+                   
+            }
+            ?>
         </form>
         
         <div class="footer">
@@ -124,7 +125,6 @@
     </div>
     <script src="../../js/validaciones.js"></script>
     <!--JS para ventanas de alerta-->
-    
     
 </body>
 
