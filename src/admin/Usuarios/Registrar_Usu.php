@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="../../css/Usuarios.css">
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="shortcut icon" href="../../img/icon1.ico"/>
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <title>Registrar usuarios</title>
+    <?php include("../conexion/conexion.php"); ?>
 </head>
 
 <body>
@@ -33,28 +35,28 @@
             <div class="nombre-completo">
                 <div class="campo-formulario">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" onkeyup="javascript:this.value = this.value.toUpperCase(); ">
+                    <input type="text" name="nom_Usu" id="nombre" onkeyup="javascript:this.value = this.value.toUpperCase(); ">
                     <small>El nombre no debe de estar vacío</small>
                 </div>
                 <div class="campo-formulario apellidos">
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" onkeyup="javascript:this.value = this.value.toUpperCase();">
+                    <input type="text" name="apellido_Usu"id="apellido" onkeyup="javascript:this.value = this.value.toUpperCase();">
                     <small>Los apellidos no deben de estar vacíos</small>
                 </div>
             </div>
             <div class="campo-formulario">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña">
+                <input type="password" name="contra_Usu" id="contraseña">
                 <small>Las contraseñas deben de ser iguales</small>
             </div>
             <div class="campo-formulario">
                 <label for="confirmar-contraseña">Confirmar contraseña</label>
-                <input type="password" id="confirmar_contraseña">
+                <input type="password" name="confirm_Usu" id="confirmar_contraseña">
                 <small>Las contraseñas deben de ser iguales</small>
             </div>
             <div class="campo-formulario">
                 <label for="telefono">Número de teléfono</label>
-                <input type="tel" id="telefono">
+                <input type="tel" name="tel_Usu" id="telefono">
                 <small>El teléfono no debe contener letras</small>
             </div>
             <div class="campo-formulario">
@@ -83,8 +85,33 @@
                 </div>
                 <small id="tipo-usuario-error">Selecciona el tipo de usuario</small>
             </div>
-            <input type="submit" id="submit" value="Guardar">
+            <input type="submit" name="btn_guardar" id="submit" value="Guardar">
+            <?php
+
+                        //obtener las variables
+                        $nombre = $_POST['nombre_Usu'];
+                        $apellidos = $_POST['apellido_Usu'];
+                        $pass = $_POST['contra_Usu'];
+                        $telefono = $_POST['tel_Usu'];
+                        $tipo_usuario = $_POST['tipo_usuario'];
+                        $genero = $_POST['lst_sexo'];
+                        ?>
+            <?php
+            $cons = insert(
+                              'usuarios',
+                              'NULL,"' . $nombre . '","' . $apellidos . '","' . $pass . '",' . $tipo_usuario . ',"' . $telefono . '","' . $genero . '"');
+                        if ($cons) {
+                        ?>
+                              window.alert("El registro fue un exito");
+                                    
+                        <?php
+                        } else {
+                        ?>   window.alert("Error al registrar.");
+                        <?php
+                        }
+                        ?>
         </form>
+        
         <div class="footer">
             <h5>Página Web para una paleteria</h5>
             <h5>Integrantes</h5>
@@ -96,6 +123,9 @@
         </div>
     </div>
     <script src="../../js/validaciones.js"></script>
+    <!--JS para ventanas de alerta-->
+    
+    
 </body>
 
 </html>
