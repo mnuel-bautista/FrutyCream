@@ -46,14 +46,14 @@
 
         </div>
         <div class="formulario-de-contacto">
-            <form action="" class="modal-content">
+            <form action="php/enviar_mensaje.php" class="modal-content" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" class="form-control" required>
+                    <input name="nombre" type="text" id="nombre" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
-                    <input type="text" id="email" class="form-control">
+                    <input name="email" type="text" id="email" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="mensaje">Mensaje</label>
