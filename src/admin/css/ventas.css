@@ -1,0 +1,102 @@
+@import url('../../css/tipografia.css');
+@import url('menu.css');
+html,
+body {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seleccionar-fecha {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    justify-items: stretch;
+}
+
+.contenido {
+    display: flex;
+    flex: 1;
+    margin: 0px 12px;
+}
+
+.contenido-ventas {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+    align-self: stretch;
+}
+
+.ventas {
+    flex: 1;
+}
+
+.estadisticas {
+    width: 316px;
+    height: 100%;
+}
+
+.table-responsive {
+    width: 100%;
+}
+
+.producto-mas-vendido {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+    border: 1px solid rgba(54, 40, 38, s .12);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.productos-mas-vendidos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+    border: 1px solid rgba(54, 40, 38, .12);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+    border: 1px solid rgba(54, 40, 38, .12);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #362826;
+}
+
+p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
