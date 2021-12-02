@@ -20,6 +20,13 @@
 
 $pagina = 'mensajes';
 
+session_start();
+$session = $_SESSION['usuario'];
+
+if ($session == null || $session == '') {
+    header('Location: iniciar_sesion.php'); 
+}
+
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 
 ?>

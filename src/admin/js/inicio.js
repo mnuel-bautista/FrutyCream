@@ -29,7 +29,7 @@ function getAllProducts() {
 
     const productsContainer = document.querySelector('.productos');
 
-    fetch('http://localhost/proyecto-pw/src/admin/productos.php')
+    fetch('http://localhost/proyecto-pw/src/admin/productos/productos.php')
         .then(response => response.text())
         .then(products => {
             productsContainer.innerHTML = products

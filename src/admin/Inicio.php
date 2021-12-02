@@ -4,8 +4,7 @@ session_start();
 $session = $_SESSION['usuario'];
 
 if ($session == null || $session == '') {
-    echo "Usted no tiene autorización";
-    die();
+    header('Location: iniciar_sesion.php'); 
 }
 
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
@@ -45,7 +44,7 @@ $categorias = mysqli_fetch_all($result);
 
         <div class="content">
             <ul class="categorias s2">
-                <li class="categoria selected">All</li>
+                <li class="categoria">Todas</li>
                 <?php foreach ($categorias as $categoria) : ?>
                     <li class="categoria" id="<?= $categoria[0] ?>"><?= $categoria[1] ?></li>
                 <?php endforeach; ?>

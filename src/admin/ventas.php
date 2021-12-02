@@ -5,6 +5,13 @@
 
 $pagina = "ventas";
 
+session_start();
+$session = $_SESSION['usuario'];
+
+if ($session == null || $session == '') {
+    header('Location: iniciar_sesion.php'); 
+}
+
 if (isset($_POST['fecha'])) {
     $fecha = $_POST['fecha'];
 } else {

@@ -10,7 +10,7 @@
                     <span>shopping_bag</span>
                     <p class="s1">Ventas</p>
                 </a></li>
-            <li><a href="http://localhost/proyecto-pw/src/admin/productos/productos.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'productos' ? 'elemento-seleccionado' : ''; ?>">
+            <li><a href="http://localhost/proyecto-pw/src/admin/productos.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'productos' ? 'elemento-seleccionado' : ''; ?>">
                     <span>inventory_2</span>
                     <p class="s1">Productos</p>
                 </a></li>
