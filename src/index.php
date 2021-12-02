@@ -73,7 +73,7 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
         </div>
 
         <div class="footer">
-
+           <?php include("footer.php")?>             
         </div>
     </div>
 </body>

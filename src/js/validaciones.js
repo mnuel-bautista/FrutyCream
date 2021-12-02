@@ -11,11 +11,6 @@ const formulario = document.getElementById("formulario-usuario");
 /**
  * Este código dentro de los corchetes, se ejecuta cada de que se presiona el botón de 'Guardar'.
  */
-formulario.addEventListener('submit', e => {
-    e.preventDefault();
-    validarCampos();
-    console.log("faskfañjs")
-})
 
 const inputs = document.querySelectorAll("input")
 
@@ -148,13 +143,13 @@ function validarCampos() {
         }
     }
 
-    const opcionUsuario = formulario.opcion_usuario;
-    const opcionAdministrador = formulario.opcion_administrador;
+   // const opcionUsuario = formulario.opcion_usuario;
+   // const opcionAdministrador = formulario.opcion_administrador;
 
-    if ((!opcionUsuario.checked) && (!opcionAdministrador.checked)) {
-        opcionUsuario.parentElement.parentElement.classList.add("error")
-        formularioValido = false;
-    }
+   // if ((!opcionUsuario.checked) && (!opcionAdministrador.checked)) {
+   //     opcionUsuario.parentElement.parentElement.classList.add("error")
+   //     formularioValido = false;
+   // }
 
     const telefono = formulario.telefono;
     const campoTelefono = telefono.parentElement;
@@ -176,7 +171,7 @@ function validarCampos() {
     }
 
     if (formularioValido) {
-        alert("Usuario registrado");
+        return true;
     } else {
         //El focus regresa al primer campo que tenga un error. 
         const campoError = document.querySelector(".error");
@@ -187,5 +182,7 @@ function validarCampos() {
             campoError.children[1].focus();
             console.log(document.querySelector(".error"));
         }
+
+        return false;
     }
 }
