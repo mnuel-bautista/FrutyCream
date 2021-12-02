@@ -20,7 +20,7 @@
             <?php include("php/menu.php") ?>
             <div class="info">
                 <h4>Paletería FrutyCream</h4>
-                <p class="b1">Somos parte del grupo de heladerías mexicanas "La Michoacana". Estamos ubicados en la calle Ignacio Zaragoza #92 con un horario de 10:00 AM a 8:00 PM. Ven, conocenos y degusta de exquisitas nieves, paletas, aguas frescas y muchas más delicias
+                <p class="b1">Somos un nuevo establecimiento de paletas y healdos. Estamos ubicados en la calle Ignacio Zaragoza #92 con un horario de 10:00 AM a 8:00 PM. Ven, conocenos y degusta de exquisitas nieves, paletas, aguas frescas y muchas más delicias
                     elaboradas de manera artesanal con ingredientes 100% naturales y de la mejor calidad para tu paladar.</p>
             </div>
         </div>
@@ -93,7 +93,7 @@
 
             <div class="description">
                 <h1>¡Hola!</h1>
-                <h2 class="s1">Somos la paletería "La Michoacana de Don Fallín."</h2>
+                <h2 class="s1">Somos la paletería "FrutyCream"</h2>
 
             </div>
 

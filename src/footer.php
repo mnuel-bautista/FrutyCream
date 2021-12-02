@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer - Design for MagtimusPro</title>
 
     <link rel="stylesheet" href="css/footer.css">
 
@@ -48,9 +47,9 @@
 
             <div class="box__footer">
                 <h4>Redes Sociales</h4>
-                <a href=> <i class="fab fa-facebook-square"></i> La michoacana</a>
-                <a href=><i class="fab fa-twitter-square"></i> Paletería_Mich</a>
-                <a href=><i class="fab fa-instagram-square"></i> Michoacana</a>
+                <a href=> <i class="fab fa-facebook-square"></i>FrutyCream</a>
+                <a href=><i class="fab fa-twitter-square"></i>FrutyCream</a>
+                <a href=><i class="fab fa-instagram-square"></i>FrutyCream</a>
             </div>
 
         </div>

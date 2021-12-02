@@ -5,7 +5,7 @@
 </head>
 <nav>
     <div class="logo">
-        <p>La michoacana</p>
+        <p>FrutyCream</p>
     </div>
     <span class="material-icons-outlined nav-toggle">
         menu
