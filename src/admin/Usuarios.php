@@ -8,7 +8,7 @@ $pagina  = 'usuarios';
 //Conexion
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 //Recuperar todas las categorias de usuarios
-$consulta = "SELECT nombre, apellidos, telefono, tipo_usuario FROM usuarios;";
+$consulta = "SELECT id, nombre, apellidos, telefono FROM usuarios;";
 //Realiza la consulta a la base de datos
 $resultado = mysqli_query($conn, $consulta);
 
@@ -54,10 +54,10 @@ $usuarios = mysqli_fetch_all($resultado);
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Telefono</th>
-                            <th>Tipo de usuario</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,7 +68,7 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[2]?></td>
                                 <td scope="col"><?= $usuarios[3]?></td>
                                 <td scope="col"><a href ="Usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
-                                <td scope="col"><a href ="#" target="_blank">Editar</a></td>
+                                <td scope="col"><a href ="Usuarios/Editar_Usu.php" target="_blank">Editar</a></td>
                                 <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
                             </tr>
                         <?php endforeach; ?>
