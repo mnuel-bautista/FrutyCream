@@ -94,3 +94,10 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
         swal("", "El mensaje se ha eliminado.", "success");
     </script>
 <?php endif; ?>
+
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
