@@ -18,10 +18,6 @@
                     <span>chat_bubble_outline</span>
                     <p class="s1">Mensajes</p>
                 </a></li>
-            <li><a href="#" class="mdc-icon-button material-icons-outlined <?= $pagina == 'promociones' ? 'elemento-seleccionado' : ''; ?>">
-                    <span>money_off</span>
-                    <p class="s1">Promociones</p>
-                </a></li>
             <li><a href="Usuarios.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'usuarioss' ? 'elemento-seleccionado' : ''; ?>">
                     <span>person</span>
                     <p class="s1">Usuarios</p>
