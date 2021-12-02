@@ -1,3 +1,8 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu-inicio.css">
+   
+</head>
 <nav>
     <div class="logo">
         <p>La michoacana</p>
