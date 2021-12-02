@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-
-$pagina = 'mensajes';
-
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
-
-$consulta = "SELECT * FROM mensajes;";
-$resultado = $conn->query($consulta);
-
-$mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
-
-?>
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +14,34 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="css/mensajes.css">
     <title>Mensajes</title>
 </head>
+
+
+<?php
+
+$pagina = 'mensajes';
+
+$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+
+?>
+
+<?php if (isset($_POST['id'])) : ?>
+
+    <?php
+    $id = $_POST['id'];
+    $consulta = "DELETE FROM mensajes WHERE id = $id";
+    $mensaje_eliminado = $conn->query($consulta); ?>
+
+<?php endif; ?>
+
+
+<?php
+
+$consulta = "SELECT * FROM mensajes;";
+$resultado = $conn->query($consulta);
+
+$mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
+
+?>
 
 <body>
     <div class="contenedor">
@@ -76,17 +89,8 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
 
 </html>
 
-<?php if (isset($_POST['id'])) : ?>
-
-    <?php
-    $id = $_POST['id'];
-    $consulta = "DELETE FROM mensajes WHERE id = $id";
-    $resultado = $conn->query($consulta); ?>
-
-    <?php if ($resultado) : ?>
-        <script>
-            window.location.href = "mensajes.php";
-        </script>
-    <?php endif; ?>
-
+<?php if ($mensaje_eliminado) : ?>
+    <script>
+        swal("", "El mensaje se ha eliminado.", "success");
+    </script>
 <?php endif; ?>
