@@ -1,0 +1,80 @@
+@import url('../css/tipografia.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*background-image: linear-gradient(rgba(151, 147, 170, 0.35), rgba(151, 147, 170, 0.35)), url('../img/contacto.jpg');*/
+    background-image: linear-gradient(rgba(38, 34, 54, 0.651), rgba(38, 34, 54, 0.651)), url('../img/contacto.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto Condensed';
+}
+
+.contenedor {
+    position: relative;
+    min-height: calc(100vh - 120px);
+    padding: 0px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1 / 2;
+    color: #F7FAF9;
+    justify-self: flex-start;
+}
+
+.contenido {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #F7FAF9;
+}
+
+.team1{
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 500px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;
+    position: relative;
+}
+.team2{
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 500px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;
+    position: relative;
+}
+.team3{
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 500px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;
+    position: relative;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
