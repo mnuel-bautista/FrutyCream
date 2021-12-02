@@ -67,9 +67,8 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1]?></td>
                                 <td scope="col"><?= $usuarios[2]?></td>
                                 <td scope="col"><?= $usuarios[3]?></td>
-                                <td scope="col"><a href ="Usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
-                                <td scope="col"><a href ="Usuarios/Editar_Usu.php" target="_blank">Editar</a></td>
-                                <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
+                                <td scope="col"><a href ="Usuarios/Editar_Usu.php?<?= "id=" .$usuarios[0]?>" target="_blank">Editar</a></td>
+                                <td scope="col"><a href ="Usuarios/Eliminar_Usu.php?<?= "id=" .$usuarios[0]?>" onclick="alertarEliminacion();">Eliminar</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

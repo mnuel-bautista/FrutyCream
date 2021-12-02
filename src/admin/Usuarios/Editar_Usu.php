@@ -29,6 +29,7 @@
         <!-- Cada input representa algún tipo de información que se puede ingresar, como nombre, apellidos, etc..-->
         <form action="" id="formulario-usuario" method="post" onsubmit="return validarCampos();">
             <h4>Editar usuario</h4>
+            <input name="id" type="hidden" value="<?= $_GET['id']?>">
             <div class="nombre-completo">
                 <div class="campo-formulario">
                     <label for="nombre">Nombre</label>
@@ -70,18 +71,19 @@
                
                if(isset($_POST["nombre_Usu"]) && isset($_POST["apellido_Usu"]) && isset($_POST["contra_Usu"]) && isset($_POST["tel_Usu"]) && isset($_POST["lst_sexo"])){
                     //obtener las variables
-                        $id = $_POST['txt_id'];
+                        $id = $_POST['id'];
                         $nombre = $_POST['nombre_Usu'];
                         $apellidos = $_POST['apellido_Usu'];
                         $pass = $_POST['contra_Usu'];
                         $telefono = $_POST['tel_Usu'];
                         $genero = $_POST['lst_sexo'];
+                        
 
-                        $campos = "nombre_Usu = '$nombre'";
-                        $campos .= ", apellido_Usu = '$apellidos'";
-                        $campos .= ", contra_Usu = '$pass'";
-                        $campos .= ", tel_Usu = $telefono";
-                        $campos .= ", lst_sexo = '$genero'";
+                        $campos = "nombre = '$nombre'";
+                        $campos .= ", apellidos = '$apellidos'";
+                        $campos .= ", pass = '$pass'";
+                        $campos .= ", telefono = '$telefono'";
+                        $campos .= ", genero = '$genero'";
 
                         $where = "id = $id";
 

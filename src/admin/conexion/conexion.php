@@ -40,7 +40,6 @@ function update($tbl_name,$field_col,$field_where){
            " SET ".$field_col.
            " WHERE ".$field_where;
     $db=db_query($sql);
-    echo $sql;
     return $db;
 }
 
