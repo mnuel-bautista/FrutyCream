@@ -143,13 +143,13 @@ function validarCampos() {
         }
     }
 
-    const opcionUsuario = formulario.opcion_usuario;
-    const opcionAdministrador = formulario.opcion_administrador;
+   // const opcionUsuario = formulario.opcion_usuario;
+   // const opcionAdministrador = formulario.opcion_administrador;
 
-    if ((!opcionUsuario.checked) && (!opcionAdministrador.checked)) {
-        opcionUsuario.parentElement.parentElement.classList.add("error")
-        formularioValido = false;
-    }
+   // if ((!opcionUsuario.checked) && (!opcionAdministrador.checked)) {
+   //     opcionUsuario.parentElement.parentElement.classList.add("error")
+   //     formularioValido = false;
+   // }
 
     const telefono = formulario.telefono;
     const campoTelefono = telefono.parentElement;

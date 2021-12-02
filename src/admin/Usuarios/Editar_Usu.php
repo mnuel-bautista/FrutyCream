@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +9,7 @@
     <link rel="shortcut icon" href="../../img/icon1.ico"/>
    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.1/dist/sweetalert2.all.min.js"></script>-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Registrar usuarios</title>
+    <title>Editar usuarios</title>
     <?php include("../conexion/conexion.php"); ?>
 </head>
 
@@ -32,7 +28,7 @@
         <!-- Formulario para ingresar los datos de los nuevos usuarios -->
         <!-- Cada input representa algún tipo de información que se puede ingresar, como nombre, apellidos, etc..-->
         <form action="" id="formulario-usuario" method="post" onsubmit="return validarCampos();">
-            <h4>Registrar Usuario</h4>
+            <h4>Editar usuario</h4>
             <div class="nombre-completo">
                 <div class="campo-formulario">
                     <label for="nombre">Nombre</label>
@@ -74,21 +70,30 @@
                
                if(isset($_POST["nombre_Usu"]) && isset($_POST["apellido_Usu"]) && isset($_POST["contra_Usu"]) && isset($_POST["tel_Usu"]) && isset($_POST["lst_sexo"])){
                     //obtener las variables
+                        $id = $_POST['txt_id'];
                         $nombre = $_POST['nombre_Usu'];
                         $apellidos = $_POST['apellido_Usu'];
                         $pass = $_POST['contra_Usu'];
                         $telefono = $_POST['tel_Usu'];
                         $genero = $_POST['lst_sexo'];
-                        $cons = insert(
-                            'usuarios',
-                            'NULL,"' . $nombre . '","' . $apellidos . '","' . $pass . '", "' . $telefono . '","' . $genero . '"');
+
+                        $campos = "nombre_Usu = '$nombre'";
+                        $campos .= ", apellido_Usu = '$apellidos'";
+                        $campos .= ", contra_Usu = '$pass'";
+                        $campos .= ", tel_Usu = $telefono";
+                        $campos .= ", lst_sexo = '$genero'";
+
+                        $where = "id = $id";
+
+                        $cons = update('usuarios', $campos, $where);
+
                       if ($cons) {
                           ?>
-                        <script>swal("¡Registro exitoso!", "¡Se ha registrado al usuario!", "success");</script>
+                        <script>swal("¡Todo listo!", "¡Se han editado correctamente los datos!", "success");</script>
                     <?php
                 } else {
                     ?>
-                        <script>swal("Oops...", "No se ha podido hacer el registro", "error");</script>
+                        <script>swal("Oops...", "No se pudieron efectuar los cambios.", "error");</script>
               <?php }
                    
             }
