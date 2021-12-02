@@ -20,7 +20,6 @@ function select($tbl_name){
 
 function insert($tbl_name,$db_values){
     $sql="INSERT INTO ".$tbl_name." VALUES( ".$db_values.");";
-    echo $sql;
     return db_query($sql);
  }
 
