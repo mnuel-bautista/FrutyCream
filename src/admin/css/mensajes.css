@@ -29,4 +29,5 @@ p {
 .mensajes {
     flex: 1;
     overflow-y: auto;
+    margin-top: 24px;
 }
