@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 @import url('../../css/tipografia.css');
-
-body{
+body {
     display: flex;
     height: 100%;
 }
-html{
+
+html {
     height: 100%;
 }
+
 .flexbox-container {
     display: flex;
 }
-.contenido{
+
+.contenido {
     flex: 1;
 }
-.flexbox-item{
+
+.flexbox-item {
     width: 500px;
     margin: 10px;
     padding: 0;
@@ -22,47 +25,45 @@ html{
     max-height: 100%;
 }
 
-.flexbox-item-1{
+.flexbox-item-1 {
     min-height: 600px;
-    
-    
 }
-.flexbox-item-2{
+
+.flexbox-item-2 {
     background: #FFFBFA;
     min-height: 600px;
     flex-shrink: 0;
     flex-grow: 2;
     flex-basis: 0;
-    
 }
 
-
-
-.flexbox-item-3{
+.flexbox-item-3 {
     min-height: 600px;
-    
 }
+
+
 /*
 
 */
-.buscar{
-    padding: 5px;
 
+.buscar {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.buscar input{
+.buscar input {
     width: 240px;
     height: 30px;
     padding: 0 20px;
     font-size: 18px;
     color: #000;
     outline: none;
-    border: 1px solid silver;border-radius: 30px;
-    transition:  all 0.6s ease;
-
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.6s ease;
 }
 
-.buscar:hover input:focus{
+.buscar:hover input:focus {
     width: 240px;
 }
 
