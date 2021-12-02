@@ -29,6 +29,7 @@ $categorias = mysqli_fetch_all($result);
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/orden-articulo.css">
     <link rel="stylesheet" href="css/inicio.css">
     <script src="js/inicio.js" defer></script>

@@ -23,6 +23,7 @@ nav ul {
     width: auto;
     justify-content: flex-end;
     margin-right: 120px;
+    z-index: 10;
 }
 
 nav ul li {

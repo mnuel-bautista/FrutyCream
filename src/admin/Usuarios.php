@@ -6,7 +6,7 @@
 $pagina  = 'usuarios';
 
 //Conexion
-$conn = mysqli_connect('localhost', 'root', 'efciqa2208', 'paleteria');
+$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 //Recuperar todas las categorias de usuarios
 $consulta = "SELECT id, nombre, apellidos, telefono FROM usuarios;";
 //Realiza la consulta a la base de datos

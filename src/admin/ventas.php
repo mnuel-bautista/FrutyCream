@@ -3,7 +3,7 @@
 
 <?php
 
-$pagina = "ventas"; 
+$pagina = "ventas";
 
 if (isset($_POST['fecha'])) {
     $fecha = $_POST['fecha'];
@@ -78,7 +78,6 @@ $ingresos = $resultado->fetch_assoc();
         <div class="contenido">
             <div class="contenido-ventas">
                 <div class="barra-superior">
-                    <p>Manuel Bautista</p>
                     <form class="seleccionar-fecha" action="http://localhost/proyecto-pw/src/admin/ventas.php" method="POST">
                         <input type="date" name="fecha" value="<?= $fecha ?>">
                         <button type="input" class="btn btn-link">Actualizar</button>
@@ -119,15 +118,19 @@ $ingresos = $resultado->fetch_assoc();
                 </div>
                 <div class="ingresos tarjeta">
                     <h6 class="card-title">Ingresos</h6>
-                    <p class="b2"><?= $ingresos['ingresos']; ?></p>
+                    <p class="b2"><?= (isset($ingresos['nombre'])) ? $ingresos['nombre'] : 'No hay información'; ?></p>
                 </div>
                 <div class="productos-mas-vendidos card">
                     <h6 class="card-title">Productos más vendidos</h6>
-                    <ul class="list-group list-group-flush">
-                        <?php foreach ($productos_mas_vendidos as $producto) : ?>
-                            <li class="list-group-item"><?= $producto['nombre']; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
+                    <?php if (count($productos_mas_vendidos) != 0) : ?>
+                        <ul class="list-group list-group-flush">
+                            <?php foreach ($productos_mas_vendidos as $producto) : ?>
+                                <li class="list-group-item"><?= $producto['nombre']; ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php else : ?>
+                        <p class="b2">No hay información</p>
+                    <?php endif; ?>
                 </div>
                 <div>
                     <canvas class="grafica" width="400px" height="400px">

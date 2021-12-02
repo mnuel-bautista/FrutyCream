@@ -1,11 +1,10 @@
-
 const orden = {};
 
-let ps = []; 
+let ps = [];
 
 const elementoOrden = document.querySelector(".orden");
 
-const contenedorDeArticulos = document.querySelector('.articulos'); 
+const contenedorDeArticulos = document.querySelector('.articulos');
 
 //Los botones para eliminar que se encuentran en cada producto. Aparecen como una X en la parte superior 
 let eliminarBtns = document.querySelectorAll(".boton-remover");
@@ -14,28 +13,28 @@ let añadirBtns = document.querySelectorAll(".boton-añadir");
 
 let disminuirBtns = document.querySelectorAll(".boton-disminuir");
 
-let añadirArticulosBtns = document.querySelectorAll(".añadir-articulo"); 
+let añadirArticulosBtns = document.querySelectorAll(".añadir-articulo");
 
 
 
-const categories = []; 
+const categories = [];
 
-getAllProducts(); 
-actualizarEventos();  
+getAllProducts();
+actualizarEventos();
 
 
 let i = 0;
 
 function getAllProducts() {
 
-    const productsContainer = document.querySelector('.productos'); 
+    const productsContainer = document.querySelector('.productos');
 
     fetch('http://localhost/proyecto-pw/src/admin/productos.php')
         .then(response => response.text())
         .then(products => {
             productsContainer.innerHTML = products
             setAddItemButtonsClickListener();
-        }); 
+        });
 
 }
 
@@ -46,56 +45,56 @@ function getAllProducts() {
  */
 function añadirArticulo(idProducto) {
     const products = document.getElementsByClassName("producto")
-    const elementoDeProducto = products.namedItem(idProducto); 
+    const elementoDeProducto = products.namedItem(idProducto);
 
     contenedorDeArticulos.innerHTML = '';
 
     //Si el articulo no se encuentra, añadirlo a la orden como un nuevo articulo
-    const index = ps.findIndex(e => e.id === idProducto)  
-    if(index === -1) {
-        const id = elementoDeProducto.id; 
+    const index = ps.findIndex(e => e.id === idProducto)
+    if (index === -1) {
+        const id = elementoDeProducto.id;
         //La url de la imagen del producto
-        const img = elementoDeProducto.children[1].src;
-        const name = elementoDeProducto.children[2].firstElementChild.textContent; 
-        const price = elementoDeProducto.children[2].lastElementChild.textContent;  
-    
+        const img = elementoDeProducto.querySelector('.img').src;
+        const name = elementoDeProducto.querySelector('.nombre').textContent;
+        const price = elementoDeProducto.querySelector('.precio').textContent;
+
         const product = {
-            id: id, 
+            id: id,
             nombre: name,
-            precio: price, 
-            cantidad: 1, 
-            img: img,   
+            precio: price,
+            cantidad: 1,
+            img: img,
         }
-    
-        ps.push(product); 
+
+        ps.push(product);
     } else {
         //Si el producto ya se encuentra en la orden, solo aumenta la cantidad 
-        ps[index]['cantidad'] = ps[index]['cantidad'] + 1; 
+        ps[index]['cantidad'] = ps[index]['cantidad'] + 1;
     }
 
-    
 
-    ps.forEach(e => mostrarProducto(e)); 
 
-    actualizarEventos(); 
+    ps.forEach(e => mostrarProducto(e));
+
+    actualizarEventos();
 }
 
 
 function añadirProducto(producto) {
 
-    contenedorDeArticulos.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = '';
     //Añadir el nuevo producto a la lista de productos. 
     ps.push(producto);
 
     //Mostrar en pantalla todos los productos dentro de la lista de productos 
     ps.forEach(e => mostrarProducto(e))
 
-    actualizarEventos(); 
+    actualizarEventos();
 }
 
 function eliminarProducto(productoId) {
 
-    contenedorDeArticulos.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = '';
 
     ps = ps.filter(e =>
         e.id !== productoId);
@@ -104,7 +103,7 @@ function eliminarProducto(productoId) {
 
     eliminarBtns = document.querySelectorAll(".boton-remover")
 
-    actualizarEventos(); 
+    actualizarEventos();
 }
 
 function mostrarProducto(producto) {
@@ -133,7 +132,7 @@ function mostrarProducto(producto) {
     template.innerHTML = elementoProducto;
 
 
-    contenedorDeArticulos.appendChild(template.content);  
+    contenedorDeArticulos.appendChild(template.content);
 }
 
 /**
@@ -141,7 +140,7 @@ function mostrarProducto(producto) {
  */
 function incrementarCantidadProducto(productoId) {
 
-    contenedorDeArticulos.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = '';
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -150,7 +149,7 @@ function incrementarCantidadProducto(productoId) {
 
     ps.forEach(e => mostrarProducto(e))
 
-    actualizarEventos(); 
+    actualizarEventos();
 }
 
 
@@ -159,7 +158,7 @@ function incrementarCantidadProducto(productoId) {
  */
 function disminuirCantidadProducto(productoId) {
 
-    contenedorDeArticulos.innerHTML = ''; 
+    contenedorDeArticulos.innerHTML = '';
 
     const producto = ps.find(e => e.id === productoId)
     const cantidadActual = producto['cantidad']
@@ -170,15 +169,15 @@ function disminuirCantidadProducto(productoId) {
 
     ps.forEach(e => mostrarProducto(e))
 
-    actualizarEventos(); 
+    actualizarEventos();
 }
 
 function agregarEventoClick() {
     eliminarBtns = document.querySelectorAll(".boton-remover")
     eliminarBtns.forEach(e => {
         e.addEventListener('click', e => {
-                //Después de identificar que boton fue presionado, acceder al padre del elemento
-                //para obtener el id y poder eliminar el elemento. 
+            //Después de identificar que boton fue presionado, acceder al padre del elemento
+            //para obtener el id y poder eliminar el elemento. 
             eliminarProducto(e.target.parentElement.id)
         })
     })
@@ -214,19 +213,19 @@ function agregarEventoDisminuirCantidad() {
 
 function setAddItemButtonsClickListener() {
 
-    añadirArticulosBtns = document.querySelectorAll('.añadir-articulo'); 
+    añadirArticulosBtns = document.querySelectorAll('.añadir-articulo');
 
     añadirArticulosBtns.forEach(button => {
         button.addEventListener('click', e => {
-            añadirArticulo(e.target.parentElement.parentElement.id); 
+            añadirArticulo(e.target.parentElement.parentElement.id);
         })
     })
 }
 
 function actualizarEventos() {
-    agregarEventoDisminuirCantidad(); 
-    agregarEventoIncrementarCantidad(); 
-    agregarEventoClick(); 
+    agregarEventoDisminuirCantidad();
+    agregarEventoIncrementarCantidad();
+    agregarEventoClick();
 
     //setAddItemButtonsClickListener(); 
 }
