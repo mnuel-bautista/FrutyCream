@@ -17,7 +17,7 @@ $resultado = $conn->query($consulta);
 
 if($resultado) {
     //La inseración fue exitosa
-    header('Location: http://localhost/proyecto-pw/src/admin/productos/productos.php'); 
+    header('Location: ../productos.php'); 
 }
 
 

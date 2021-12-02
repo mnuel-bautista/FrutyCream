@@ -59,7 +59,7 @@ body {
 
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(151, 147, 170, 0.35), rgba(151, 147, 170, 0.35)), url('../img/img.jpg');
+    background-image: linear-gradient(rgba(151, 147, 170, 0.35), rgba(151, 147, 170, 0.35)), url('../img/inicio.jpg');
     background-size: cover;
     background-position: center;
 }

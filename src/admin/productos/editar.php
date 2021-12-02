@@ -1,4 +1,4 @@
-<?php
+f<?php
 
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 
@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="producto-formulario" method="POST" action="https://localhost/proyecto-pw/src/admin/productos/actualizar.php">
+                <form id="producto-formulario" method="POST" action="actualizar.php">
                     
                     <input type="hidden" name="id" value="<?= $id_producto; ?>">
                     <div class="mb-3 form-group">

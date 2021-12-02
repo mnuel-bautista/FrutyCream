@@ -23,7 +23,7 @@ $resultado = mysqli_query($conn, $consulta);
 
 //Si la consulta fue exitosa, resultado tendrá el valor TRUE
 if($resultado) {
-    header('Location: http://localhost/proyecto-pw/src/admin/productos/productos.php'); 
+    header('Location: ../productos.php'); 
 } else {
     print_r($resultado);
 }

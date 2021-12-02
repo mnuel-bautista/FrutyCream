@@ -33,7 +33,7 @@ function confirmarOrden() {
         console.log(ps);
         console.log(JSON.stringify(articulos));
         //Enviar la información al servidor utilizando el método POST
-        fetch('http://localhost/proyecto-pw/src/admin/ventas/crear.php', {
+        fetch('ventas/crear.php', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(articulos)

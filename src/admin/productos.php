@@ -72,7 +72,7 @@ $productos = mysqli_fetch_all($resultado);
                                     <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
                                 </td>
                                 <td>
-                                    <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST" onsubmit="return confirmarEliminacion();">
+                                    <form action="productos/eliminar.php" method="POST" onsubmit="return confirmarEliminacion();">
                                         <input type="hidden" name="id" value="<?= $producto[0];?>">
                                         <button type="submit" class="btn btn-link">Eliminar</button>
                                     </form> 
@@ -92,7 +92,7 @@ $productos = mysqli_fetch_all($resultado);
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="producto-formulario" enctype="multipart/form-data" method="POST" action="http://localhost/proyecto-pw/src/admin/productos/crear.php">
+                            <form id="producto-formulario" enctype="multipart/form-data" method="POST" action="productos/crear.php">
                                 <div class="mb-3 form-group">
                                     <label for="nombre-producto">Nombre</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre-producto">
@@ -134,5 +134,5 @@ $productos = mysqli_fetch_all($resultado);
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="productos.js"></script>
+<script src="productos/productos.js"></script>
 </html>

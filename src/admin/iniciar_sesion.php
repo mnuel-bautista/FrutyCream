@@ -24,7 +24,7 @@
                 <h5 class="modal-title">Inicia sesión</h5>
             </div>
             <div class="modal-body">
-                <form action="http://localhost/proyecto-pw/src/admin/session/validar.php" method="POST">
+                <form action="session/validar.php" method="POST">
                     <div class="mb-3 form-group">
                         <label for="nombre-producto">Nombre</label>
                         <input type="text" name="nombre" class="form-control" id="nombre">

@@ -85,7 +85,7 @@ $ingresos = $resultado->fetch_assoc();
         <div class="contenido">
             <div class="contenido-ventas">
                 <div class="barra-superior">
-                    <form class="seleccionar-fecha" action="http://localhost/proyecto-pw/src/admin/ventas.php" method="POST">
+                    <form class="seleccionar-fecha" action="ventas.php" method="POST">
                         <input type="date" name="fecha" value="<?= $fecha ?>">
                         <button type="input" class="btn btn-link">Actualizar</button>
                     </form>

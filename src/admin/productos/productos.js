@@ -1,9 +1,9 @@
 function editarProducto(idProducto) {
-    location.href = `http://localhost/proyecto-pw/src/admin/productos/editar.php?id=${idProducto}`
+    location.href = `productos/editar.php?id=${idProducto}`
 }
 
 function eliminarProducto(idProducto) {
-    location.href = `http://localhost/proyecto-pw/src/admin/productos/eliminar.php?id=${idProducto}`
+    location.href = `productos/eliminar.php?id=${idProducto}`
 }
 
 function confirmarEliminacion() {
