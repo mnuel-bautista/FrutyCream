@@ -1,22 +1,19 @@
 .producto {
     position: relative;
     width: 186px;
-    height: 220px;
+    height: 240px;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-
 }
 
 .producto img {
-    margin: auto;
-}
-
-.producto div p {
-    text-align: center;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 .añadir-articulo {
@@ -26,13 +23,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute; 
-    right: 8px; 
-    top: 8px; 
-    color: rgba(253, 159, 150, 1); 
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: rgba(253, 159, 150, 1);
 }
 
 .producto:hover .añadir-articulo {
     visibility: visible;
 }
 
+.producto:hover>.imagen .capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.producto .nombre {
+    margin: 0;
+    margin-top: 12px;
+    margin-left: 12px;
+    color: #384053;
+    font-weight: 600;
+}
+
+.producto .precio {
+    color: #384053;
+    margin-left: 12px;
+}
+
+.producto .categoria {
+    color: #F09188;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.imagen {
+    height: 60%;
+}
+
+.capa {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(56, 64, 82, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-out;
+}
