@@ -24,7 +24,7 @@ if (isset($_GET['id'])) {
     $resultado = $conn->query($consulta); 
     $categorias = $resultado->fetch_all();
 } else {
-    echo "<h1> Ocurrio algun error</h1>";
+    echo "<h1> There was an error while deleting the product. </h1>";
     var_dump($_POST);
 }
 

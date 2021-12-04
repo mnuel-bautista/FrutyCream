@@ -15,7 +15,7 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -31,29 +31,29 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
     <div class="hero">
         <nav>
             <div class="logo">
-                <p>La michoacana</p>
+                <p>FrutyCream</p>
             </div>
             <span class="material-icons-outlined nav-toggle">
                 menu
             </span>
             <ul class="menu-navegacion">
-                <li><a href="index.php" class="active">Inicio</a></li>
-                <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <li class="boton-cerrar"><a href="">Cerrar</a></li>
+                <li><a href="index.php" class="active">Home</a></li>
+                <li><a href="Nosotros.html">Us</a></li>
+                <li><a href="contacto.php">About us</a></li>
+                <li class="boton-cerrar"><a href="">Close</a></li>
             </ul>
         </nav>
         <div class="info">
-            <h1 class="info-titulo">Prueba los mejores helados</h1>
-            <p class="info-descripcion">La Heladería (Inserte nombre) le ofrece los sabores más exquisitos directo a tu paladar en forma de deliciosas paletas y helados elaborados tradicionalmente con ingredientes naturales</p>
-            <a href="#nuestros-productos"><button class="ver-mas">Productos</button></a>
+            <h1 class="info-titulo">Try the best ice creams</h1>
+            <p class="info-descripcion">FrutyCream offers the most exquisite flavors directly to your palate in the form of delicious ice popsicles and ice cream traditionally made with natural ingredients</p>
+            <a href="#nuestros-productos"><button class="ver-mas">Products</button></a>
         </div>
     </div>
     <div class="content">
 
         <div class="nuestros-productos" id="nuestros-productos">
-            <h2>Nuestros productos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus ligula ut varius dictum. Suspendisse.</p>
+            <h2>Our products</h2>
+            <p>They are of excellent quality and completely natural.</p>
         </div>
 
         <div class="productos">

@@ -2,10 +2,10 @@
 // Realizar la conexión con la base de datos
 
 function db_query($query) {
-    $db_host = 'localhost';	  // Servidor donde está alojada la base de datos
-    $db_user = 'root';		  // Usuario de la base de datos
-    $db_password = '';		  // Contraseña de la base de datos
-    $db_name = 'paleteria';	      // Nombre de la base de datos
+    $db_host = 'localhost';	  // Server where the database is stored.
+    $db_user = 'root';		  // Username of the database
+    $db_password = '';		  // Database password
+    $db_name = 'paleteria';	      // name of the DB
     $db_port = '3306';
     $connection =mysqli_connect($db_host,$db_user,$db_password,$db_name,$db_port);// = mysqli_connect($db_host,$db_user,$db_password,$db_name);
     $result = mysqli_query($connection,$query);

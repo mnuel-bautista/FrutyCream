@@ -7,5 +7,5 @@ function eliminarProducto(idProducto) {
 }
 
 function confirmarEliminacion() {
-    return confirm('¿Esta seguro de eliminar el producto?');
+    return confirm('Are you sure you want to delete this product?');
 }

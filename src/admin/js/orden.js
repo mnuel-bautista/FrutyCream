@@ -11,7 +11,7 @@ botonParaEliminarOrden.addEventListener('click', e => {
 })
 
 /**
- * Vaciar el arreglo donde estan almacenados los articulos
+ * Empty the array where the products are stored
  */
 function eliminarOrden() {
     contenedorDeArticulos.innerHTML = '';
@@ -41,7 +41,7 @@ function confirmarOrden() {
             .then(response => {
                 //La respuesta fue exitosa
                 if (response.ok) {
-                    swal("", 'La orden se ha guardado.', "success");
+                    swal("", 'Your order has been saved.', "success");
 
                     //Remover los articulos de la orden. 
                     while (ps.length > 0) { ps.pop(); }

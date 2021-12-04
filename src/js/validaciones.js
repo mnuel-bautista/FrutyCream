@@ -1,15 +1,15 @@
 /***
  * 
- * Este es el archivo que contiene todas las validaciones del formulario. 
+ * This is the file that contains all the validations for the form.
  */
 
 /**
- * Esta es una referencia a todo el formulario que se encuentra dentro del documento HTML. 
+ * This is a reference to the entire form within the HTML document.
  */
 const formulario = document.getElementById("formulario-usuario");
 
 /**
- * Este código dentro de los corchetes, se ejecuta cada de que se presiona el botón de 'Guardar'.
+ * This code inside the brackets is executed every time the 'Save' button is pressed.
  */
 
 const inputs = document.querySelectorAll("input")
@@ -17,7 +17,7 @@ const inputs = document.querySelectorAll("input")
 
 inputs.forEach(input => {
     input.addEventListener('change', ev => {
-        /**Cada de que algun valor de los campos cambia se ejecuta este código para remover la clase de error */
+        /**Every time any value of the fields changes, this code is executed to remove the error class */
         if (input.type === "radio") {
             input.parentElement.parentElement.classList.remove("error")
         } else {
@@ -33,8 +33,8 @@ select.addEventListener('change', e => {
 
 function validarCampos() {
     inputs.forEach(input => {
-        /**Cada de que se presiona el botón de guardar, hay que remover la clase de error de los campos
-         * para que no se presente el error y volver a validar los nuevos valores. 
+        /**Every time the save button is pressed, the error class must be removed from the fields
+          * so that the error does not appear and revalidate the new values.
          */
         input.parentElement.classList.remove("error")
     })
@@ -43,8 +43,8 @@ function validarCampos() {
 
     if (formulario.nombre.value.length === 0) {
         /***
-         * Validamos el nombre, en caso de que no sea válido, le añadimos la clase de error al campo 
-         * para que se apliquen los estilos correspondientes de css. 
+         * We validate the name, in case it is not valid, we add the error class to the field
+          * so that the corresponding css styles are applied.
          */
         error = formulario.nombre.parentElement.querySelector("small")
         error.innerHTML = "El nombre no debe estar vacio";
@@ -54,8 +54,8 @@ function validarCampos() {
 
     if (formulario.apellido.value.length === 0) {
         /***
-         * Validamos el apellido, en caso de que no sea válido, le añadimos la clase de error al campo 
-         * para que se apliquen los estilos correspondientes de css. 
+         * We validate the surname, in case it is not valid, we add the error class to the field
+          * so that the corresponding css styles are applied.
          */
         error = formulario.apellido.parentElement.querySelector("small")
 
@@ -83,9 +83,9 @@ function validarCampos() {
                 <input type="password" id="confirmar_contraseña">
                 <small>Las contraseñas deben de ser iguales</small>
         </div>
-     * El padre directo del elemento(input) que se guardo en la constante 'contraseña', es el div. 
-        Para acceder al padre directo, usan parentElement. 
-        A este div es al que le tienen que agregar la clase 'error'. 
+     * The direct parent of the element (input) that was stored in the constant 'password', is the div.
+         To access the direct parent, they use parentElement.
+         This div is the one to which they have to add the class 'error'. 
      * 
      */
     const campoContraseña = contraseña.parentElement
@@ -96,7 +96,7 @@ function validarCampos() {
                     <input type="password" id="confirmar_contraseña">
                     <small>Las contraseñas deben de ser iguales</small>
             </div>
-        * Lo mismo que el campo anterior
+        * The same as the previous field
         * 
         */
     const campoConfirmarcontraseña = confirmarContraseña.parentElement
@@ -105,10 +105,10 @@ function validarCampos() {
     if (contraseña.value !== confirmarContraseña.value) {
 
         /***
-         * Validamos la contraseña, en caso de que no sea válida, le añadimos la clase de error al campo 
-         * para que se apliquen los estilos correspondientes de css. 
-         * 
-         * En esta if, se valida que ambas contraseñas sean iguales 
+         * We validate the password, in case it is not valid, we add the error class to the field
+          * so that the corresponding css styles are applied.
+          *
+          * In this if, it is validated that both passwords are the same
          */
 
         error = campoContraseña.querySelector("small")
@@ -122,7 +122,7 @@ function validarCampos() {
     } else {
 
         /***
-         * Validación para comprobar que los campos de las contraseñas no estan vacíos. 
+         * Validation to check that the password fields are not empty.
          */
 
         if (contraseña.value.length == 0) {
@@ -173,7 +173,7 @@ function validarCampos() {
     if (formularioValido) {
         return true;
     } else {
-        //El focus regresa al primer campo que tenga un error. 
+        //The focus returns to the first field that has an error.
         const campoError = document.querySelector(".error");
 
         if (campoError.tagName === "select") {

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/mensajes.css">
-    <title>Mensajes</title>
+    <title>Messages</title>
 </head>
 
 
@@ -56,9 +56,9 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Mensaje</th>
-                            <th>Nombre</th>
-                            <th>Correo electrónico</th>
+                            <th>Message</th>
+                            <th>Name</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,7 +70,7 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
                                 <td>
                                     <form id="form-eliminar" action="mensajes.php" method="POST">
                                         <input type="hidden" name="id" value="<?= $mensaje['id']; ?>">
-                                        <button type="submit" class="btn btn-link">Eliminar</button>
+                                        <button type="submit" class="btn btn-link">Delete</button>
                                     </form>
                                 </td>
                             </tr>
@@ -91,7 +91,7 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
 
 <?php if ($mensaje_eliminado) : ?>
     <script>
-        swal("", "El mensaje se ha eliminado.", "success");
+        swal("", "The message has been delete.", "success");
     </script>
 <?php endif; ?>
 

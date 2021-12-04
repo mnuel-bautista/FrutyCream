@@ -5,14 +5,13 @@
 
 $pagina  = 'usuarios';
 
-//Conexion
+//Connection
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
-//Recuperar todas las categorias de usuarios
 $consulta = "SELECT id, nombre, apellidos, telefono FROM usuarios;";
-//Realiza la consulta a la base de datos
+//Makes the query to the database
 $resultado = mysqli_query($conn, $consulta);
 
-//Convertir el resultado devuelto por mysql a un arreglo de categorias
+//Convert the result returned by mysql to an array of categories
 $usuarios = mysqli_fetch_all($resultado);
 
 ?>
@@ -22,7 +21,7 @@ $usuarios = mysqli_fetch_all($resultado);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
+    <title>Users</title>
     
     <link rel="stylesheet" href="menu/menu.php">
     
@@ -45,8 +44,7 @@ $usuarios = mysqli_fetch_all($resultado);
             <div>
                 <div>
                     <div class="buscar">
-                        <input type="text" placeholder="Buscar usuarios...">
-                        <a class="boton"><a href ="Usuarios/Registrar_Usu.php" target="_blank"><button type="button" class="btn btn-link" data-bs-toggle="modal">Crear usuario</button></a>
+                        <a class="boton"><a href ="Usuarios/Registrar_Usu.php" target="_blank"><button type="button" class="btn btn-link" data-bs-toggle="modal">Create new user</button></a>
                     </div>
                 </div>
                 
@@ -55,9 +53,9 @@ $usuarios = mysqli_fetch_all($resultado);
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Telefono</th>
+                            <th>Name</th>
+                            <th>Lastname</th>
+                            <th>Phone number</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,9 +65,8 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1]?></td>
                                 <td scope="col"><?= $usuarios[2]?></td>
                                 <td scope="col"><?= $usuarios[3]?></td>
-                                <td scope="col"><a href ="Usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
-                                <td scope="col"><a href ="Usuarios/Editar_Usu.php<?= "?id=".$usuarios[0]?>" target="_blank">Editar</a></td>
-                                <td scope="col"><a href ="#" target="_blank">Eliminar</a></td>
+                                <td scope="col"><a href ="Usuarios/Editar_Usu.php<?= "?id=".$usuarios[0]?>" target="_blank">Edit</a></td>
+                                <td scope="col"><a href ="#" target="_blank">Delete</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

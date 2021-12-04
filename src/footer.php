@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer - Design for MagtimusPro</title>
 
     <link rel="stylesheet" href="css/footer.css">
 
@@ -34,30 +33,30 @@
             <div class="box__footer">
                
                 <div class="terms">
-                    <p>Nos caracterizamos por nuestra gran variedad de sabores exclusivos e innovadores para paladares exigentes.
-                        naturales. </p>
+                    <p>We are characterized by our wide variety of natual, exclusive and innovative flavors for demanding palates.
+                          </p>
                 </div>
             </div>
 
             <div class="box__footer">
-                <h4>Contáctanos</h4>
+                <h4>Contact us</h4>
                 <a href=>Alondra Méndez- alondramendez@gmail.com</a>
                 <a href=>Carlos Zendejas- carloszen@gmail.com</a>
                 <a href=>Juan Bautista- juanbau@gmail.com/a>             
             </div>
 
             <div class="box__footer">
-                <h4>Redes Sociales</h4>
-                <a href=> <i class="fab fa-facebook-square"></i> La michoacana</a>
-                <a href=><i class="fab fa-twitter-square"></i> Paletería_Mich</a>
-                <a href=><i class="fab fa-instagram-square"></i> Michoacana</a>
+                <h4>Social media</h4>
+                <a href=> <i class="fab fa-facebook-square"></i> FrutyCream</a>
+                <a href=><i class="fab fa-twitter-square"></i> FrutyCream</a>
+                <a href=><i class="fab fa-instagram-square"></i> FrutyCream</a>
             </div>
 
         </div>
 
         <div class="box__copyright">
             <hr>
-            <p>Página ficticia <b>Proyecto escolar</b></p>
+            <p>Fictitious page <b>This is a school project</b></p>
         </div>
     </footer>
 

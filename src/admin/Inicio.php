@@ -4,7 +4,7 @@ session_start();
 $session = $_SESSION['usuario'];
 
 if ($session == null || $session == '') {
-    echo "Usted no tiene autorización";
+    echo "You do not have authorization";
     die();
 }
 
@@ -35,7 +35,7 @@ $categorias = mysqli_fetch_all($result);
     <script src="js/inicio.js" defer></script>
     <script src="js/categorias.js" defer></script>
     <script src="js/orden.js" defer></script>
-    <!-- Para agregar algunos iconos -->
+    <!-- To add icons -->
 </head>
 
 <body>
@@ -57,11 +57,11 @@ $categorias = mysqli_fetch_all($result);
 
         <div class="orden">
             <div class="encabezado-orden">
-                <h5>Orden</h5>
+                <h5>Order</h5>
                 <button class="mdc-icon-button material-icons-outlined eliminar-orden">close<div class="mdc-icon-button__ripple"></div></button>
             </div>
             <ul class="articulos"></ul>
-            <button class="boton confirmar-orden">Confirmar</button>
+            <button class="boton confirmar-orden">Confirm</button>
         </div>
     </div>
 

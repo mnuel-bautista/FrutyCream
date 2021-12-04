@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/Nosotros.css">
     <link rel="stylesheet" href="css/tipografia.css">
     <link rel="shortcut icon" href="img/icon1.ico">
-    <title>Sobre nosotros</title>
+    <title>About us</title>
 </head>
 
 <body>
@@ -19,56 +19,55 @@
         <div class="contenido">
             <?php include("php/menu.php") ?>
             <div class="info">
-                <h4>Paletería FrutyCream</h4>
-                <p class="b1">Somos parte del grupo de heladerías mexicanas "La Michoacana". Estamos ubicados en la calle Ignacio Zaragoza #92 con un horario de 10:00 AM a 8:00 PM. Ven, conocenos y degusta de exquisitas nieves, paletas, aguas frescas y muchas más delicias
-                    elaboradas de manera artesanal con ingredientes 100% naturales y de la mejor calidad para tu paladar.</p>
+                <h4>Ice cream parlor FrutyCream</h4>
+                <p class="b1">We are a ice cream parlor. We are located at Simon Bolivar 13, Bellavista, 61120 Cd Hidalgo, Mich. With a schedule from 10:00 AM to 8:00 PM. Come, meet us and taste exquisite ice creams, popsicles, fresh waters and many more delicacies made in an artisanal way with 100% natural ingredients and of the best quality for your palate.</p>
             </div>
         </div>
 
         <div class="elementos">
             <div class="mision">
-                <h6>Mision</h6>
+                <h6>Our mission</h6>
                 <p>
-                    Ofrecer productos y servicios integrales al sector de la industria de los helados con equipos e insumos de excelente calidad, y generar posibilidades de desarrollo para nuestros clientes y para los emprendedores interesados en iniciar su propia empresa.
+                Offer comprehensive products and services to the ice cream industry sector with excellent quality equipment and supplies, and generate development opportunities for our clients and for entrepreneurs interested in starting their own company.
                 </p>
             </div>
             <div class="vision">
-                <h6>Vision</h6>
+                <h6>Our mision</h6>
                 <p>
-                    Ser una empresa de vanguardia en los servicios de la industria alimenticia, con capacidad para atender oportunamente las necesidades de nuestros clientes y, con ello, consolidar nuestro crecimiento en el mercado nacional e internacional
+                To be a cutting-edge company in the services of the food industry, with the ability to timely meet the needs of our customers and, with this, consolidate our growth in the national and international market.
                 </p>
             </div>
             <div class="valores">
-                <h6>Valores</h6>
+                <h6>Our values</h6>
                 <ul>
                     <li>
-                       <b>Compromiso</b> : Con todos nuestros clientes y proveedores.
+                       <b>Commitment</b> : With all our clients and suppliers.
                     </li>
                     <li>
-                      <b>Trabajo</b>  : Siempre con los altos niveles de higiene y calidad.
+                      <b>Work</b>  : Always with the high levels of hygiene and quality.
                     </li>
                     <li>
-                       <b>Creatividad</b> : Siempre en constante actualización en nuestros productos.
+                       <b>Creativity</b> : Always constantly updating our products.
 
                     </li>
                     <li>
-                       <b>Calidad</b> : Contando siempre con los mejores insumos y frutas frescas.
+                       <b>Quality</b> : Always counting on the best supplies and fresh fruits.
 
                     </li>
 
                     <li>
-                       <b>Eficiencia</b> : Siempre con personal capacitado.
+                       <b>Efficiency</b> : Always with trained personnel.
                     </li>
-                    <li> <b>Puntualidad</b> : Siempre a tiempo.</li>
+                    <li> <b>Puntuality</b> : Always on time.</li>
                     <li>
-                       <b>Filosofía</b> : Esforzarnos día a día para ofrecer un mejor servicio a nuestros clientes, con atención de alta calidad y confianza.
+                       <b>Philosophy</b> : Strive every day to offer a better service to our clients, with high quality and trustworthy attention.
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="ubicacion">
-            <h4>Dónde nos ubicamos</h4>
+            <h4>Where we are located?</h4>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.518613657249!2d-100.56227418565324!3d19.690532537485797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2cbb3d6f13c3d%3A0x99093d838fd1281!2sSimon%20Bolivar%2013%2C%20Bellavista%2C%2061120%20Cd%20Hidalgo%2C%20Mich.!5e0!3m2!1sen!2smx!4v1638429564433!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <ul>
@@ -80,24 +79,13 @@
         <div class="slid">
 
             <div class="slider-frame">
-                <h4>¡Siempre estamos dispuestos a servirte con una sonrisa!</h4>
+                <h4>We are always ready to serve you with a smile!</h4>
 
             </div>
 
         </div>
 
         <div id="showcase">
-            <div class="circulo">
-                <img src="img/mich.png" class="imagen">
-            </div>
-
-            <div class="description">
-                <h1>¡Hola!</h1>
-                <h2 class="s1">Somos la paletería "La Michoacana de Don Fallín."</h2>
-
-            </div>
-
-
         </div>
 </body>
 <script src="js/menu.js"></script>

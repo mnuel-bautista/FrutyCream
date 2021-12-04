@@ -1,7 +1,7 @@
 
 <?php 
 /**
- * Crea un nuevo producto en la base de datos. Los datos son los que se enviaron desde el formulario.  
+ * Create a new product in the database. The data was sent from the form. 
 */
 
 echo $_FILES['img']['name']; 

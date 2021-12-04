@@ -11,36 +11,36 @@
     <link rel="stylesheet" href="css/menu-inicio.css">
     <link rel="stylesheet" href="css/contacto.css">
 
-    <title>Document</title>
+    <title>Contact</title>
 </head>
 
 <body>
     <?php include('php/menu.php') ?>
     <section class="contenedor">
         <div class="titulo">
-            <h2>Contactanos</h2>
-            <p>¿Tienes alguna pregunta? Nos encantaría ayudarte.</p>
+            <h2>Contact us</h2>
+            <p>Do you have any question? We would love to help you.</p>
         </div>
         <div class="contacto">
             <div class="contacto-info">
                 <span class="material-icons-outlined icono">
                     location_on
                 </span>
-                <h4>Dirección</h4>
+                <h4>Address</h4>
                 <p>Morelos #10, Maravatio</p>
             </div>
             <div class="contacto-info">
                 <span class="material-icons-outlined icono">
                     email
                 </span>
-                <h4>Correo electrónico</h4>
+                <h4>Email</h4>
                 <p>garcia.manuel.b7@gmail.com</p>
             </div>
             <div class="contacto-info">
                 <span class="material-icons-outlined icono">
                     call
                 </span>
-                <h4>Teléfono</h4>
+                <h4>Phone number</h4>
                 <p>447 100 0072</p>
             </div>
 
@@ -48,18 +48,18 @@
         <div class="formulario-de-contacto">
             <form action="php/enviar_mensaje.php" class="modal-content" method="POST">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Name</label>
                     <input name="nombre" type="text" id="nombre" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo electrónico</label>
+                    <label for="email">Email</label>
                     <input name="email" type="text" id="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
+                    <label for="mensaje">Message</label>
                     <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </section>

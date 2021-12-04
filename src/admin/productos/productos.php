@@ -6,12 +6,12 @@
 $pagina = "productos"; 
 
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
-//Recuperar todas las categorias de productos.
+//Retrieve all product categories.
 $consulta = "SELECT id_cat, categoria FROM categoria;";
-//Realiza la consulta a la base de datos
+//Make the query to the database
 $resultado = mysqli_query($conn, $consulta);
 
-//Convertir el resultado devuelto por mysql a un arreglo de categorias
+//Convert the result returned by mysql to an array of categories
 $categorias = mysqli_fetch_all($resultado);
 
 $consulta_productos = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, c.categoria FROM "
@@ -32,7 +32,7 @@ $productos = mysqli_fetch_all($resultado);
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/productos.css">
-    <title>Productos</title>
+    <title>Products</title>
 </head>
 
 <body>
@@ -41,17 +41,17 @@ $productos = mysqli_fetch_all($resultado);
 
         <div class="contenido">
             <div class="barra-superior">
-                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#crear-producto-modal">Agregar producto</button>
+                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#crear-producto-modal">Add product</button>
             </div>
 
             <div class="productos">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Descripcion</th>
-                            <th>Precio</th>
-                            <th>Categoria</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Category</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,12 +62,12 @@ $productos = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $producto[3] ?></td>
                                 <td scope="col"><?= $producto[4] ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Editar</button>
+                                    <button type="button" class="btn btn-link" onclick="editarProducto(parentElement.parentElement.id);">Edit</button>
                                 </td>
                                 <td>
                                     <form action="http://localhost/proyecto-pw/src/admin/productos/eliminar.php" method="POST" onsubmit="return confirmarEliminacion();">
                                         <input type="hidden" name="id" value="<?= $producto[0];?>">
-                                        <button type="submit" class="btn btn-link">Eliminar</button>
+                                        <button type="submit" class="btn btn-link">Delete</button>
                                     </form> 
                                 </td>
                             </tr>
@@ -81,29 +81,29 @@ $productos = mysqli_fetch_all($resultado);
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Crear producto</h5>
+                            <h5 class="modal-title">Create product</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form id="producto-formulario" enctype="multipart/form-data" method="POST" action="http://localhost/proyecto-pw/src/admin/productos/crear.php">
                                 <div class="mb-3 form-group">
-                                    <label for="nombre-producto">Nombre</label>
+                                    <label for="nombre-producto">Name</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre-producto">
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <label for="descripcion-producto">Descripcion</label>
+                                    <label for="descripcion-producto">Description</label>
                                     <input type="text" name="descripcion" class="form-control" id="descripcion-producto">
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <label for="precio-producto">Precio</label>
+                                    <label for="precio-producto">Price</label>
                                     <input type="number" name="precio" class="form-control" id="precio-producto">
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <label for="imagen-producto">Imagen</label>
+                                    <label for="imagen-producto">Image</label>
                                     <input type="file" name="img" class="form-control" id="imagen-producto" accept="image/*">
                                 </div>
                                 <div class="mb-3 form-group">
-                                    <label for="categoria-producto">Categoria</label>
+                                    <label for="categoria-producto">Category</label>
                                     <select name="categoria" name="categoria" class="form-control" id="categoria-producto">
                                         <?php foreach ($categorias as $categoria) : ?>
                                             <option value="<?= $categoria[0]; ?>"><?= $categoria[1] ?></option>
@@ -113,8 +113,8 @@ $productos = mysqli_fetch_all($resultado);
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" form="producto-formulario" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" form="producto-formulario" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>

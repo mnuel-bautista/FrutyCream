@@ -9,7 +9,7 @@ botones.forEach(btn => {
 function confirmarEliminacion() {
     console.log('fasdfa');
     swal({
-            title: "Estas seguro de eliminar el mensaje?",
+            title: "Are you sure you want to delete this message?",
             icon: "warning",
             buttons: true,
             dangerMode: true,

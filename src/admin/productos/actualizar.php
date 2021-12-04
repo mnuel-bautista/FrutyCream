@@ -3,7 +3,7 @@
 $conn = mysqli_connect('localhost', 'root', '', 'paleteria');
 
 $id_producto = $_POST['id']; 
-//Recuperar los parametros que se enviaron con el metodo POST
+//Retrieve the parameters that were sent with the POST method
 $nombre = $_POST['nombre']; 
 $descripcion = $_POST['descripcion']; 
 $precio = $_POST['precio']; 
@@ -16,7 +16,7 @@ $consulta = "UPDATE producto SET nombre = '$nombre', descripcion = '$descripcion
 $resultado = $conn->query($consulta); 
 
 if($resultado) {
-    //La inseración fue exitosa
+    //The insertion was successful
     header('Location: http://localhost/proyecto-pw/src/admin/productos/productos.php'); 
 }
 
