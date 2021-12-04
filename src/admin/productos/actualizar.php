@@ -1,6 +1,7 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("../conexion/conexion.php"); 
+$conn = conectar();
 
 $id_producto = $_POST['id']; 
 //Recuperar los parametros que se enviaron con el metodo POST

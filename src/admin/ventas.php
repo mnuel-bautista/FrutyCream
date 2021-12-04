@@ -18,7 +18,8 @@ if (isset($_POST['fecha'])) {
     $fecha = date("Y-m-d");
 }
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("conexion/conexion.php"); 
+$conn = conectar();
 //Recuperar todas las categorias de productos.
 $consulta = "SELECT p.nombre, p.precio, a.cantidad, (a.cantidad * p.precio) as total, v.fecha FROM ventas v "
     . "INNER JOIN articulos a ON v.id_venta = a.id_venta INNER JOIN producto p ON a.id_producto = p.id_producto WHERE v.fecha = '$fecha';";

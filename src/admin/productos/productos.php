@@ -3,8 +3,8 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("../conexion/conexion.php"); 
+$conn = conectar();
 
 $consulta = 'SELECT p.id_producto, p.nombre, p.precio, p.img, c.categoria FROM producto p INNER JOIN categoria c ON p.id_cat = c.id_cat';
 

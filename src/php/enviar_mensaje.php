@@ -1,6 +1,7 @@
 <?php 
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
+include("../admin/conexion/conexion.php"); 
+$conn = conectar();
 
 $nombre = $_POST['nombre']; 
 $email = $_POST['email']; 

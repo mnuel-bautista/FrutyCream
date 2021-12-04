@@ -1,6 +1,7 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("admin/conexion/conexion.php"); 
+$conn = conectar();
 
 $consulta = 'SELECT * FROM producto;';
 $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);

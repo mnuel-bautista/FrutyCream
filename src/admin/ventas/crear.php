@@ -1,6 +1,7 @@
 <?php 
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria'); 
+include("../conexion/conexion.php"); 
+$conn = conectar(); 
 
 $consulta = "INSERT INTO ventas VALUES(NULL, CURRENT_DATE());";
 $resultado = mysqli_query($conn, $consulta);  

@@ -12,7 +12,8 @@ if ($session == null || $session == '') {
 
 $pagina = "productos"; 
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("conexion/conexion.php"); 
+$conn = conectar();
 //Recuperar todas las categorias de productos.
 $consulta = "SELECT id_cat, categoria FROM categoria;";
 //Realiza la consulta a la base de datos

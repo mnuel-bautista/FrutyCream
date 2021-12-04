@@ -1,5 +1,6 @@
 <?php 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("../conexion/conexion.php"); 
+$conn = conectar();
 
 $nombre = $_POST['nombre']; 
 $contraseña = $_POST['pass']; 

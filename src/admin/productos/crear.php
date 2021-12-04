@@ -10,7 +10,8 @@ $nombre_de_archivo = $_FILES['img']['tmp_name'];
 $ruta_de_imagen = "img/"."{$_FILES['img']['name']}";
 move_uploaded_file($nombre_de_archivo, "../../".$ruta_de_imagen);  
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("../conexion/conexion.php"); 
+$conn = conectar();
 
 $nombre = $_POST['nombre']; 
 $descripcion = $_POST['descripcion']; 

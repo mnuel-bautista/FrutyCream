@@ -27,7 +27,8 @@ if ($session == null || $session == '') {
     header('Location: iniciar_sesion.php'); 
 }
 
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("conexion/conexion.php"); 
+$conn = conectar();
 
 ?>
 

@@ -6,7 +6,8 @@
 $pagina  = 'usuarios';
 
 //Conexion
-$conn = mysqli_connect('localhost', 'root', '', 'paleteria');
+include("conexion/conexion.php"); 
+$conn = conectar();
 //Recuperar todas las categorias de usuarios
 $consulta = "SELECT id, nombre, apellidos, telefono FROM usuarios;";
 //Realiza la consulta a la base de datos
@@ -45,7 +46,7 @@ $usuarios = mysqli_fetch_all($resultado);
         <div>
             <div>
                 <div class="buscar">
-                    <a class="boton"><a href="Usuarios/Registrar_Usu.php" target="_blank"><button type="button" class="btn btn-link" data-bs-toggle="modal">Crear usuario</button></a>
+                    <a class="boton"><a href="usuarios/Registrar_Usu.php" target="_blank"><button type="button" class="btn btn-link" data-bs-toggle="modal">Crear usuario</button></a>
                 </div>
             </div>
 
@@ -66,8 +67,8 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1] ?></td>
                                 <td scope="col"><?= $usuarios[2] ?></td>
                                 <td scope="col"><?= $usuarios[3] ?></td>
-                                <td scope="col"><a href="Usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
-                                <td scope="col"><a href="Usuarios/Editar_Usu.php<?= "?id=" . $usuarios[0] ?>" target="_blank">Editar</a></td>
+                                <td scope="col"><a href="usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
+                                <td scope="col"><a href="usuarios/Editar_Usu.php<?= "?id=" . $usuarios[0] ?>" target="_blank">Editar</a></td>
                                 <td scope="col">
                                     <form action="usuarios/eliminar.php" method="POST" onsubmit="return confirm('¿Desea eliminar al usuario?')">
                                         <input type="hidden" name="id" value="<?= $usuarios['0'] ?>">
