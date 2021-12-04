@@ -18,7 +18,7 @@ if(!isset($usuario)) {
 if($nombre == $usuario['nombre'] && $contraseña == $usuario['pass']) {
     session_start(); 
     $_SESSION['usuario'] = $nombre; 
-    header('Location: ../Inicio.php'); 
+    header('Location: ../index.php'); 
 } else {
     echo "<p>Credenciales incorrectas</p>"; 
 }

@@ -2,7 +2,7 @@
     <nav class="nav-bar">
         <h6>FrutyCream</h6>
         <ul>
-            <li><a href="../admin/Inicio.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'inicio' ? 'elemento-seleccionado' : ''; ?>">
+            <li><a href="../admin/index.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'inicio' ? 'elemento-seleccionado' : ''; ?>">
                     <span>home</span>
                     <p class="s1">Inicio</p>
                 </a></li>
@@ -18,7 +18,7 @@
                     <span>chat_bubble_outline</span>
                     <p class="s1">Mensajes</p>
                 </a></li>
-            <li><a href="../admin/Usuarios.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'usuarioss' ? 'elemento-seleccionado' : ''; ?>">
+            <li><a href="../admin/usuarios.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'usuarios' ? 'elemento-seleccionado' : ''; ?>">
                     <span>person</span>
                     <p class="s1">Usuarios</p>
                 </a></li>

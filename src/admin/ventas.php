@@ -41,6 +41,7 @@ INNER JOIN ventas v
         ON v.id_venta = a.id_venta
 WHERE  v.fecha = '$fecha'
 GROUP  BY id_producto
+ORDER BY mas_vendido DESC
 LIMIT  1; ";
 $resultado = $conn->query($consulta);
 
@@ -50,7 +51,7 @@ $producto_mas_vendido = $resultado->fetch_assoc();
 $consulta = "SELECT a.id_producto, p.nombre, MAX(a.cantidad) as mas_vendido FROM articulos a 
 INNER JOIN producto p ON a.id_producto = p.id_producto 
 INNER JOIN ventas v ON v.id_venta = a.id_venta WHERE v.fecha = '$fecha'
-group by id_producto LIMIT 5;";
+group by id_producto ORDER BY mas_vendido DESC LIMIT 5;";
 
 $resultado = $conn->query($consulta);
 $productos_mas_vendidos = $resultado->fetch_all(MYSQLI_ASSOC);
@@ -126,7 +127,7 @@ $ingresos = $resultado->fetch_assoc();
                 </div>
                 <div class="ingresos tarjeta">
                     <h6 class="card-title">Ingresos</h6>
-                    <p class="b2"><?= (isset($ingresos['nombre'])) ? $ingresos['nombre'] : 'No hay información'; ?></p>
+                    <p class="b2"><?= (isset($ingresos['ingresos'])) ? $ingresos['ingresos'] : 'No hay información'; ?></p>
                 </div>
                 <div class="productos-mas-vendidos card">
                     <h6 class="card-title">Productos más vendidos</h6>

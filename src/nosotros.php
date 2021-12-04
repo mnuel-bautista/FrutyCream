@@ -74,27 +74,7 @@
 
         <h4 class="mensaje">¡Siempre estamos dispuestos a servirte con una sonrisa!</h4>
 
-<<<<<<< HEAD
         <?php include("footer.php") ?>
-=======
-            </div>
-
-        </div>
-
-        <div id="showcase">
-            <div class="circulo">
-                <img src="img/mich.png" class="imagen">
-            </div>
-
-            <div class="description">
-                <h1>¡Hola!</h1>
-                <h2 class="s1">Somos la paletería "FrutyCream"</h2>
-
-            </div>
-
-
-        </div>
->>>>>>> 3464e89627e7873318edd891ddfba8bd02c872cd
 </body>
 <script src="js/menu.js"></script>
 

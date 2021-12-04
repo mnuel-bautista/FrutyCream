@@ -97,7 +97,7 @@ $mensajes = $resultado->fetch_all(MYSQLI_ASSOC);
 
 </html>
 
-<?php if ($mensaje_eliminado) : ?>
+<?php if (isset($mensaje_eliminado) && $mensaje_eliminado) : ?>
     <script>
         swal("", "El mensaje se ha eliminado.", "success");
     </script>

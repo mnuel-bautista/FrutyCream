@@ -9,6 +9,11 @@ html {
     height: 100%;
 }
 
+p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .flexbox-container {
     display: flex;
 }
