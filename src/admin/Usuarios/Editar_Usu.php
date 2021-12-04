@@ -77,12 +77,13 @@
                         $pass = $_POST['contra_Usu'];
                         $telefono = $_POST['tel_Usu'];
                         $genero = $_POST['lst_sexo'];
+                        
 
-                        $campos = "nombre_Usu = '$nombre'";
-                        $campos .= ", apellido_Usu = '$apellidos'";
-                        $campos .= ", contra_Usu = '$pass'";
-                        $campos .= ", tel_Usu = $telefono";
-                        $campos .= ", lst_sexo = '$genero'";
+                        $campos = "nombre = '$nombre'";
+                        $campos .= ", apellidos = '$apellidos'";
+                        $campos .= ", pass = '$pass'";
+                        $campos .= ", telefono = '$telefono'";
+                        $campos .= ", genero = '$genero'";
 
                         $where = "id = $id";
 

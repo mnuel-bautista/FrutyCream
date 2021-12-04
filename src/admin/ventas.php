@@ -77,7 +77,7 @@ $ingresos = $resultado->fetch_assoc();
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/ventas.css">
-    <title>Productos</title>
+    <title>Ventas</title>
 </head>
 
 <body>

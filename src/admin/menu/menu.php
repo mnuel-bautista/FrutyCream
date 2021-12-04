@@ -1,6 +1,6 @@
 <div class="header">
     <nav class="nav-bar">
-        <h6>La michoacana</h6>
+        <h6>FrutyCream</h6>
         <ul>
             <li><a href="../admin/Inicio.php" class="mdc-icon-button material-icons-outlined <?= $pagina == 'inicio' ? 'elemento-seleccionado' : ''; ?>">
                     <span>home</span>

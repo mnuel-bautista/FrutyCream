@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/menu-inicio.css">
     <link rel="stylesheet" href="css/contacto.css">
 
-    <title>Document</title>
+    <title>Contacto</title>
 </head>
 
 <body>

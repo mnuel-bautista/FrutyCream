@@ -67,7 +67,6 @@ $usuarios = mysqli_fetch_all($resultado);
                                 <td scope="col"><?= $usuarios[1] ?></td>
                                 <td scope="col"><?= $usuarios[2] ?></td>
                                 <td scope="col"><?= $usuarios[3] ?></td>
-                                <td scope="col"><a href="usuarios/Cambiar_contra.php" target="_blank">Cambiar contraseña</a></td>
                                 <td scope="col"><a href="usuarios/Editar_Usu.php<?= "?id=" . $usuarios[0] ?>" target="_blank">Editar</a></td>
                                 <td scope="col">
                                     <form action="usuarios/eliminar.php" method="POST" onsubmit="return confirm('¿Desea eliminar al usuario?')">

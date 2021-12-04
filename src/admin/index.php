@@ -25,6 +25,7 @@ $categorias = mysqli_fetch_all($result);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -36,6 +37,11 @@ $categorias = mysqli_fetch_all($result);
     <script src="js/categorias.js" defer></script>
     <script src="js/orden.js" defer></script>
     <!-- Para agregar algunos iconos -->
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Inicio</title>
+>>>>>>> 3464e89627e7873318edd891ddfba8bd02c872cd
 </head>
 
 <body>
