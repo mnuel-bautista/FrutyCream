@@ -30,20 +30,7 @@ $productos = mysqli_query($conn, $consulta)->fetch_all(MYSQLI_ASSOC);
 
 <body>
     <div class="hero">
-        <nav>
-            <div class="logo">
-                <p>FrutyCream</p>
-            </div>
-            <span class="material-icons-outlined nav-toggle">
-                menu
-            </span>
-            <ul class="menu-navegacion">
-                <li><a href="index.php" class="active">Inicio</a></li>
-                <li><a href="Nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <li class="boton-cerrar"><a href="">Cerrar</a></li>
-            </ul>
-        </nav>
+        <?php include("php/menu.php")?> 
         <div class="info">
             <h1 class="info-titulo">Prueba los mejores helados</h1>
             <p class="info-descripcion">La Heladería (Inserte nombre) le ofrece los sabores más exquisitos directo a tu paladar en forma de deliciosas paletas y helados elaborados tradicionalmente con ingredientes naturales</p>
